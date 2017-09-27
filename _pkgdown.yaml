@@ -1,0 +1,5 @@
+title: klippy
+url: http://RLesur.github.io/klippy
+template:
+  params:
+    bootswatch: spacelab
