@@ -1,6 +1,6 @@
 urls:
-  reference: http://RLesur.github.io/klippy/reference
-  article: http://RLesur.github.io/klippy/articles
+  reference: http://rlesur.github.io/klippy/reference
+  article: http://rlesur.github.io/klippy/articles
 articles:
   klippy: klippy.html
 

@@ -1,5 +1,6 @@
 title: klippy
-url: http://RLesur.github.io/klippy
+url: http://rlesur.github.io/klippy
 template:
   params:
     bootswatch: spacelab
+    ganalytics: UA-107187723-1
