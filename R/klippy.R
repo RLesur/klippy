@@ -23,9 +23,15 @@
 #' @examples
 #' tf <- tempfile(fileext = c(".Rmd", ".html"))
 #' writeLines(
-#'   c("```{r, echo=TRUE, include=TRUE}",
+#'   c("```{r klippy, echo=FALSE, include=TRUE}",
 #'     "klippy::klippy()",
-#'     "```"
+#'     "```",
+#'     "Insert this chunk in your `Rmd` file:",
+#'     "````markdown",
+#'     "`r ''````{r klippy, echo=FALSE, include=TRUE}",
+#'     "klippy::klippy()",
+#'     "```",
+#'     "````"
 #'   ),
 #'   tf[1]
 #' )
