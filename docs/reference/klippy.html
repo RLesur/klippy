@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Insert copy to clipboard buttons in HTML documents — klippy • klippy</title>
+<title>Insert copy to clipboard buttons in HTML documents � klippy • klippy</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -168,22 +168,19 @@ libraries that are declared as <code>HTML</code> dependencies:</p><ul>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>tf</span> <span class='kw'>&lt;-</span> <span class='fu'>tempfile</span>(<span class='kw'>fileext</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>".Rmd"</span>, <span class='st'>".html"</span>))
 <span class='fu'>writeLines</span>(
-  <span class='fu'>c</span>(<span class='st'>"```{r, echo=TRUE, include=TRUE}"</span>,
+  <span class='fu'>c</span>(<span class='st'>"```{r klippy, echo=FALSE, include=TRUE}"</span>,
     <span class='st'>"klippy::klippy()"</span>,
-    <span class='st'>"```"</span>
+    <span class='st'>"```"</span>,
+    <span class='st'>"Insert this chunk in your `Rmd` file:"</span>,
+    <span class='st'>"````markdown"</span>,
+    <span class='st'>"`r ''````{r klippy, echo=FALSE, include=TRUE}"</span>,
+    <span class='st'>"klippy::klippy()"</span>,
+    <span class='st'>"```"</span>,
+    <span class='st'>"````"</span>
   ),
   <span class='no'>tf</span>[<span class='fl'>1</span>]
-)
-<span class='kw pkg'>rmarkdown</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/rmarkdown/topics/render'>render</a></span>(<span class='no'>tf</span>[<span class='fl'>1</span>], <span class='st'>"html_document"</span>, <span class='no'>tf</span>[<span class='fl'>2</span>])</div><div class='output co'>#&gt; <span class='message'></span>
-#&gt; <span class='message'></span>
-#&gt; <span class='message'>processing file: file408c2403c7c3.Rmd</span></div><div class='output co'>#&gt;   |                                                                         |                                                                 |   0%  |                                                                         |.................................................................| 100%
-#&gt; label: unnamed-chunk-1 (with options) 
-#&gt; List of 2
-#&gt;  $ echo   : logi TRUE
-#&gt;  $ include: logi TRUE
-#&gt; 
-#&gt; </div><div class='output co'>#&gt; <span class='message'>output file: file408c2403c7c3.knit.md</span></div><div class='output co'>#&gt; <span class='error'>Error: path for html_dependency not found: </span></div><div class='input'>
-</div><span class='co'># NOT RUN {</span>
+)</div><span class='co'># NOT RUN {</span>
+<span class='kw pkg'>rmarkdown</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/rmarkdown/topics/render'>render</a></span>(<span class='no'>tf</span>[<span class='fl'>1</span>], <span class='st'>"html_document"</span>, <span class='no'>tf</span>[<span class='fl'>2</span>])
 <span class='fu'>browseURL</span>(<span class='fu'>paste0</span>(<span class='st'>"file://"</span>, <span class='no'>tf</span>[<span class='fl'>2</span>]))
 <span class='co'># }</span><div class='input'>
 </div></pre>
