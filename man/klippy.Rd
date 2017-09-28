@@ -73,9 +73,9 @@ writeLines(
   ),
   tf[1]
 )
-rmarkdown::render(tf[1], "html_document", tf[2])
 
 \dontrun{
+rmarkdown::render(tf[1], "html_document", tf[2])
 browseURL(paste0("file://", tf[2]))}
 
 }
