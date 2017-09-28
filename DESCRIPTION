@@ -1,5 +1,5 @@
 Package: klippy
-Title: Copy to Clipboard Buttons for R 'Markdown' HTML Documents
+Title: Copy to Clipboard Buttons for R Markdown HTML Documents
 Version: 0.0.0.9000
 Authors@R: c(
   person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre")),
@@ -13,10 +13,10 @@ Authors@R: c(
          comment = "clipboard.js library")
   )
 Maintainer: Romain Lesur <romain.lesur@gmail.com>
-Description: Insert copy to clipboard buttons in 'HTML' documents generated
+Description: Insert copy to clipboard buttons in HTML documents generated
     with 'rmarkdown'. This package is suited for a call in a 'knitr' chunk. 
-    A 'klippy' is a knitweaR clipboard button. Buttons events are 
-    rendered using 'clipboard.js' library and 'Bootstrap.js' 'Tooltip' plugin. 
+    Buttons events are rendered using 'clipboard.js' library and 'Bootstrap.js' 
+    'Tooltip' plugin. 
 Depends: R (>= 2.14.1)
 Suggests: knitr (>= 1.16), rmarkdown (>= 1.2), prettydoc (>= 0.2.0)
 Imports: assertthat (>= 0.2.0), htmltools (>= 0.3.5), stringi(>= 0.5-2) 

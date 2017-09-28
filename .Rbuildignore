@@ -1,2 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^docs$
+^_pkgdown\.yaml$
+^README\.Rmd$
+^index\.Rmd$
+^index\.html$
