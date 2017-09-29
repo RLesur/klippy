@@ -17,10 +17,10 @@ function changeTooltipMessage(element,msg) {
   element.setAttribute('data-original-title',tooltipOriginalTitle);
 }
 
-function initKlippy() {
+function initKlippy(buttonSizeClass) {
   $(document).ready(function() {
     // Add klippy buttons:
-    $("<button type='button' class='btn btn-default btn-sm btn-klippy' title='Copy to clipboard' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><span class='glyphicon glyphicon-copy' aria-hidden='true'></span></button>").insertBefore($(".klippy > code"));
+    $("<button type='button' class='btn btn-default btn-klippy "+buttonSizeClass+"' title='Copy to clipboard' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><span class='glyphicon glyphicon-copy' aria-hidden='true'></span></button>").insertBefore($(".klippy > code"));
 
     // Initialize tooltips:
     $('.btn-klippy').each(function(index){
@@ -63,8 +63,8 @@ function initKlippy() {
   });
 }
 
-function addKlippy() {
-  if(Clipboard.isSupported()) initKlippy();
+function addKlippy(buttonSizeClass) {
+  if(Clipboard.isSupported()) initKlippy(buttonSizeClass);
 }
 
 
