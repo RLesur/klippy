@@ -20,10 +20,10 @@ function changeTooltipMessage(element,msg) {
 function initKlippy() {
   $(document).ready(function() {
     // Add klippy buttons:
-    $("<button type='button' class='btn btn-default btn-lg btn-klippy' title='Copy to clipboard' data-toggle='tooltip' data-placement='left' data-trigger='hover' data-clipboard-klippy><span class='glyphicon glyphicon-copy' aria-hidden='true'></span></button>").insertBefore($(".klippy > code"));
+    $("<button type='button' class='btn btn-default btn-sm btn-klippy' title='Copy to clipboard' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><span class='glyphicon glyphicon-copy' aria-hidden='true'></span></button>").insertBefore($(".klippy > code"));
 
     // Initialize tooltips:
-    $('[data-toggle="tooltip"]').each(function(index){
+    $('.btn-klippy').each(function(index){
       $this=$(this);
       // In some HTML documents (e.g. HTML vignettes),
       // <pre><code></code></pre> element is embedded in a <div> element

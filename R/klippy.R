@@ -104,8 +104,8 @@ klippy <- function(lang = "r markdown", all_precode = FALSE) {
     name = 'klippy',
     version = '0.0.0.9000',
     src = 'htmldependencies/lib/klippy-0.0.0.9000',
-    script = 'js/klippy.min.js',
-    stylesheet = 'css/klippy.min.css',
+    script = 'js/klippy.js',
+    stylesheet = 'css/klippy.css',
     package = 'klippy'
   )
 
