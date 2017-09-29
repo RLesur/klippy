@@ -104,11 +104,11 @@
     
     <p><code>klippy</code> insert copy to clipboard buttons (or "klippies") in <code>R</code>
 <code>Markdown</code> <code>HTML</code> documents. In the rendered document, "klippies"
-are inserted in the upper right corner of the code chunks. <code>klippy()</code>
+are inserted in the upper left corner of the code chunks. <code>klippy()</code>
 function is suited for a call in a <code>knitr</code> code chunk.</p>
     
 
-    <pre class="usage"><span class='fu'>klippy</span>(<span class='kw'>lang</span> <span class='kw'>=</span> <span class='st'>"r markdown"</span>, <span class='kw'>all_precode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>klippy</span>(<span class='kw'>lang</span> <span class='kw'>=</span> <span class='st'>"r markdown"</span>, <span class='kw'>size</span> <span class='kw'>=</span> <span class='st'>"small"</span>, <span class='kw'>all_precode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -119,6 +119,11 @@ function is suited for a call in a <code>knitr</code> code chunk.</p>
 language names. If a character string contains multiple languages
 names, these names have to be separated by boundaries (e.g., spaces).
 Void string can be passed to <code>lang</code> argument.</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>Size of the klippy button. Valid values include "small",
+"medium" and "large".</p></td>
     </tr>
     <tr>
       <th>all_precode</th>

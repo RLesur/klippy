@@ -12,7 +12,6 @@ klippy::klippy()
 `klippy` is not available from CRAN, but you can install the development version from GitHub with:
 
 ```{r, eval = FALSE}
-# Don't forget to use the klippy ==>
 # install.packages("devtools")
 devtools::install_github("RLesur/klippy")
 ```

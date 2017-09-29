@@ -70,8 +70,8 @@
 
       
       </header><script src="klippy_files/jquery-1.11.3/jquery-1.11.3.min.js"></script><link href="klippy_files/bootstrap-3.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="klippy_files/bootstrap-3.3.5/dist/js/bootstrap.min.js"></script><script src="klippy_files/clipboard-1.7.1/clipboard.min.js"></script><link href="klippy_files/klippy-0.0.0.9000/css/klippy.min.css" rel="stylesheet">
-<script src="klippy_files/klippy-0.0.0.9000/js/klippy.min.js"></script><div class="row">
+<script src="klippy_files/bootstrap-3.3.5/dist/js/bootstrap.min.js"></script><script src="klippy_files/clipboard-1.7.1/clipboard.min.js"></script><link href="klippy_files/klippy-0.0.0.9100/css/klippy.min.css" rel="stylesheet">
+<script src="klippy_files/klippy-0.0.0.9100/js/klippy.min.js"></script><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
       <h1>Insert copy to clipboard buttons in RMarkdown HTML documents</h1>
@@ -84,12 +84,13 @@
     
 <div class="contents">
 <script>
-  addKlippy();
+  addClassKlippyTo("pre.r, pre.markdown");
+  addKlippy("");
 </script><div id="common-use" class="section level2">
 <h2 class="hasAnchor">
 <a href="#common-use" class="anchor"></a>Common use</h2>
 <p>The <code>klippy</code> package enhances <code>R Markdown</code> <code>HTML</code> documents with <strong>copy to clipboard buttons</strong>. You only have to paste the following chunk anywhere in your <code>Rmd</code> file.</p>
-<p>Obviously, <strong>you have to try the clipboard button in the upper right corner of this chunk!</strong></p>
+<p>Obviously, <strong>you have to try the clipboard button in the upper left corner of this chunk!</strong></p>
 <div class="sourceCode" id="ex"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown">```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```</code></pre></div>
@@ -117,6 +118,14 @@ summary(cars)
 klippy::klippy('r python')
 ```</code></pre></div>
 </div>
+<div id="klippy-size" class="section level2">
+<h2 class="hasAnchor">
+<a href="#klippy-size" class="anchor"></a>Klippy size</h2>
+<p>According to your <code>CSS</code>, you may want to modify klippy size. Three sizes (small, medium and large) are available. For example, if you want to use medium size:</p>
+<div class="sourceCode"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown">```{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(size = 'medium')
+```</code></pre></div>
+</div>
 <div id="browser-support" class="section level2">
 <h2 class="hasAnchor">
 <a href="#browser-support" class="anchor"></a>Browser Support</h2>
@@ -139,6 +148,7 @@ klippy::klippy('r python')
 <li><a href="#common-use">Common use</a></li>
       <li><a href="#code-block-selection">Code block selection</a></li>
       <li><a href="#engine-selection">Engine selection</a></li>
+      <li><a href="#klippy-size">Klippy size</a></li>
       <li><a href="#browser-support">Browser Support</a></li>
       </ul>
 </div>
