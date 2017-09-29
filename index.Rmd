@@ -1,6 +1,6 @@
 #  <img src='./logo.png' height='120' /> Clipboard buttons for R Markdown
 
-**klippy** enhances R Markdown HTML documents with **"copy to clipboard" buttons**.
+#### **klippy** enhances R Markdown HTML documents with **"copy to clipboard" buttons**.
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
