@@ -66,6 +66,17 @@ klippy::klippy('r python')
 ```
 ````
 
+## Klippy size
+
+According to your `CSS`, you may want to modify klippy size. Three sizes 
+(small, medium and large) are available. For example, if you want to use 
+medium size:
+````{.markdown .klippy}
+`r ''````{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(size = 'medium')
+```
+````
+
 ## Browser Support
 
 For supported browsers, see [`clipboard.js` documentation](https://clipboardjs.com/#browser-support).
