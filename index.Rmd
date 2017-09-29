@@ -1,4 +1,4 @@
-#  <span class='glyphicon glyphicon-copy' aria-hidden='true'></span> klippy: clipboard buttons for R Markdown
+#  <img src='./logo.png' height='120' /> Clipboard buttons for R Markdown
 
 **klippy** enhances R Markdown HTML documents with **"copy to clipboard" buttons**.
 
