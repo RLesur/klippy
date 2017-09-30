@@ -107,12 +107,19 @@ klippy <- function(lang = "r markdown", size = "small", all_precode = FALSE) {
     script = 'clipboard.min.js',
     package = 'klippy'
   )
+  octiconDep <- htmltools::htmlDependency(
+    name = 'octicons',
+    version = '6.0.1',
+    src = 'htmldependencies/lib/octicons-6.0.1',
+    attachment = 'clippy.svg',
+    package = 'klippy'
+  )
   klippyDep <- htmltools::htmlDependency(
     name = 'klippy',
     version = '0.0.0.9100',
     src = 'htmldependencies/lib/klippy-0.0.0.9100',
     script = 'js/klippy.min.js',
-    stylesheet = 'css/klippy.min.css',
+    stylesheet = 'css/klippy.css',
     package = 'klippy'
   )
 
@@ -144,7 +151,7 @@ klippy <- function(lang = "r markdown", size = "small", all_precode = FALSE) {
   # Attach dependencies to JS script:
   klippyScript <- htmltools::attachDependencies(
     htmltools::tags$script(js_script),
-    list(jqueryDep, bootstrapDep, clipboardDep, klippyDep)
+    list(jqueryDep, bootstrapDep, clipboardDep, octiconDep, klippyDep)
   )
 
   return(klippyScript)
