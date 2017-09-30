@@ -10,7 +10,9 @@ Authors@R: c(
   person(family = "Twitter, Inc", role = "cph",
          comment = "Bootstrap library"),
   person("Zeno", "Rocha", email = "hi@zenorocha.com", role = c("cph"),
-         comment = "clipboard.js library")
+         comment = "clipboard.js library"),
+  person(family = "GitHub, Inc.", role = "cph",
+         comment = "Octicons library")
   )
 Maintainer: Romain Lesur <romain.lesur@gmail.com>
 Description: Insert copy to clipboard buttons in HTML documents generated
