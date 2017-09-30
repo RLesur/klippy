@@ -19,12 +19,16 @@ function changeTooltipMessage(element,msg) {
 
 function initKlippy(buttonSizeClass) {
   $(document).ready(function() {
+    var clippyHref=document.getElementById("octicons-1-attachment").href;
     // Add klippy buttons:
-    $("<button type='button' class='btn btn-default btn-klippy "+buttonSizeClass+"' title='Copy to clipboard' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><span class='glyphicon glyphicon-copy' aria-hidden='true'></span></button>").insertBefore($(".klippy > code"));
+    $("<button type='button' class='btn btn-default btn-klippy btn-sm"+buttonSizeClass+"' title='Copy to clipboard' aria-hidden='true' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><img class='octicon' src='"+clippyHref+"' alt='Copy'></button>").insertBefore($(".klippy > code"));
 
     // Initialize tooltips:
     $('.btn-klippy').each(function(index){
       $this=$(this);
+      // Auto-size img element (child of button):
+      var paddingContainer=$this.parent().css('padding-left');
+      $this.children(".octicon").attr('width', paddingContainer);
       // In some HTML documents (e.g. HTML vignettes),
       // <pre><code></code></pre> element is embedded in a <div> element
       if ($this.parent().is(':first-child')) {
