@@ -59,4 +59,6 @@ Website: <https://clipboardjs.com/>
 GitHub: <https://github.com/zenorocha/clipboard.js/>
 
 The clipboard icon `clippy.svg` is part of:
-**GitHub Octicons** (version: 6.0.1) (c) GitHub, Inc. MIT license: <https://github.com/primer/octicons/blob/v6.0.1/LICENSE> Website: <https://octicons.github.com/>
+**GitHub Octicons** (version: 6.0.1) (c) GitHub, Inc.
+MIT license: <https://github.com/primer/octicons/blob/v6.0.1/LICENSE>
+Website: <https://octicons.github.com/>
