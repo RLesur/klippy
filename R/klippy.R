@@ -1,3 +1,58 @@
+#' @import assertthat
+#' @importFrom htmltools htmlDependency
+#' @importFrom htmltools tags
+#' @importFrom htmltools attachDependencies
+#' @importFrom stringi stri_extract_all_words
+#' @importFrom rmarkdown html_dependency_jquery
+#' @importFrom rmarkdown html_dependency_bootstrap
+NULL
+
+#' Provide HTML dependencies
+#'
+#' These functions provide HTML dependencies for `clipboard.js`, `klippy` and
+#' `octicon-clippy` for re-use.
+#' @name html-dependencies
+#' @inherit htmltools::htmlDependency return
+NULL
+
+#' @rdname html-dependencies
+#' @export
+html_dependency_clipboard <- function() {
+  htmltools::htmlDependency(
+    name = 'clipboard',
+    version = '1.7.1',
+    src = 'htmldependencies/lib/clipboard-1.7.1',
+    script = 'clipboard.min.js',
+    package = 'klippy'
+  )
+}
+
+#' @rdname html-dependencies
+#' @export
+html_dependency_klippy <- function() {
+  htmltools::htmlDependency(
+    name = 'klippy',
+    version = '0.0.0.9100',
+    src = 'htmldependencies/lib/klippy-0.0.0.9100',
+    script = 'js/klippy.min.js',
+    stylesheet = 'css/klippy.min.css',
+    package = 'klippy',
+    all_files = FALSE
+  )
+}
+
+#' @rdname html-dependencies
+#' @export
+html_dependency_octicon_clippy <- function() {
+  htmltools::htmlDependency(
+    name = 'octicons',
+    version = '6.0.1',
+    src = 'htmldependencies/lib/octicons-6.0.1',
+    attachment = 'clippy.svg',
+    package = 'klippy'
+  )
+}
+
 #' Insert copy to clipboard buttons in HTML documents
 #'
 #' \code{klippy} insert copy to clipboard buttons (or "klippies") in \code{R}
@@ -40,11 +95,6 @@
 #' rmarkdown::render(tf[1], "html_document", tf[2])
 #' browseURL(paste0("file://", tf[2]))}
 #'
-#' @import assertthat
-#' @importFrom htmltools htmlDependency
-#' @importFrom htmltools tags
-#' @importFrom htmltools attachDependencies
-#' @importFrom stringi stri_extract_all_words
 #'
 #' @export
 klippy <- function(lang = "r markdown", all_precode = FALSE) {
@@ -64,62 +114,10 @@ klippy <- function(lang = "r markdown", all_precode = FALSE) {
     assertthat::noNA(all_precode)
   )
 
-  #' @section HTML Dependencies:
-  #' \code{klippy} package includes several third parties \code{JavaScript}
-  #' libraries that are declared as \code{HTML} dependencies:
-  #' \itemize{
-  #'   \item \code{jQuery-1.11.3}, (c) jQuery Foundation, Inc.
-  #'   \href{https://jquery.org/license/}{MIT license}.
-  #'   \href{https://jquery.com/}{Website}.
-  jqueryDep <- htmltools::htmlDependency(
-    name = 'jquery',
-    version = '1.11.3',
-    src = 'htmldependencies/lib/jquery-1.11.3',
-    script = 'jquery-1.11.3.min.js',
-    package = 'klippy'
-  )
-  #'   \item \code{Bootstrap-3.3.5}, (c) Twitter, Inc.
-  #'   \href{https://github.com/twbs/bootstrap/blob/v3.3.5/LICENSE}{MIT license}.
-  #'   \href{http://getbootstrap.com}{Website}.
-  bootstrapDep <- htmltools::htmlDependency(
-    name = 'bootstrap',
-    version = '3.3.5',
-    src = 'htmldependencies/lib/bootstrap-3.3.5',
-    script = 'dist/js/bootstrap.min.js',
-    stylesheet = 'dist/css/bootstrap.min.css',
-    package = 'klippy'
-  )
-  #'   \item \code{clipboard.js-1.7.1}, (c) Zeno Rocha
-  #'   \email{hi@@zenorocha.com}.
-  #'   \href{http://zenorocha.mit-license.org/}{MIT license}.
-  #'   \href{https://clipboardjs.com/}{Website}.}
-  clipboardDep <- htmltools::htmlDependency(
-    name = 'clipboard',
-    version = '1.7.1',
-    src = 'htmldependencies/lib/clipboard-1.7.1',
-    script = 'clipboard.min.js',
-    package = 'klippy'
-  )
-  octiconDep <- htmltools::htmlDependency(
-    name = 'octicons',
-    version = '6.0.1',
-    src = 'htmldependencies/lib/octicons-6.0.1',
-    attachment = 'clippy.svg',
-    package = 'klippy'
-  )
-  klippyDep <- htmltools::htmlDependency(
-    name = 'klippy',
-    version = '0.0.0.9100',
-    src = 'htmldependencies/lib/klippy-0.0.0.9100',
-    script = 'js/klippy.min.js',
-    stylesheet = 'css/klippy.min.css',
-    package = 'klippy',
-    all_files = FALSE
-  )
-
   # Build JS script
   # Initialization:
   js_script <- ''
+
   if(all_precode) {
     # Add klippy class to <pre>...<code></code>...</pre> elements:
     js_script <- paste(js_script, '  addClassKlippyToPreCode();', sep = '\n')
@@ -139,11 +137,16 @@ klippy <- function(lang = "r markdown", all_precode = FALSE) {
   # Add a klippy button to all elements with klippy class attribute:
   js_script <- paste(js_script, '  addKlippy();\n', sep = '\n')
 
-  #' @return An \code{HTML \link[htmltools]{tag} object}.
+  #' @inherit htmltools::tag return
   # Attach dependencies to JS script:
   klippyScript <- htmltools::attachDependencies(
     htmltools::tags$script(js_script),
-    list(jqueryDep, bootstrapDep, clipboardDep, octiconDep, klippyDep)
+    list(rmarkdown::html_dependency_jquery(),
+         rmarkdown::html_dependency_bootstrap("default"),
+         html_dependency_clipboard(),
+         html_dependency_octicon_clippy(),
+         html_dependency_klippy()
+    )
   )
 
   return(klippyScript)
