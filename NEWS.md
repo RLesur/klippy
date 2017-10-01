@@ -1,4 +1,4 @@
-# klippy 0.0.0.9200 (unreleased)
+# klippy 0.0.0.9200 (pre-release)
 
 * `klippies` are auto-sized. Argument `size` is removed.
 
