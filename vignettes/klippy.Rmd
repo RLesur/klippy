@@ -39,7 +39,7 @@ You can select which of the code blocks get a klippy.
 
 First, insert this chunk anywhere in your `Rmd` file:
 
-````{.markdown .klippy}
+````{#code-block-ex .markdown .klippy}
 `r ''````{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy('')
 ```
@@ -63,17 +63,6 @@ chunk anywhere in your `Rmd` file:
 ````{.markdown .klippy}
 `r ''````{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy('r python')
-```
-````
-
-## Klippy size
-
-According to your `CSS`, you may want to modify klippy size. Three sizes 
-(small, medium and large) are available. For example, if you want to use 
-medium size:
-````{.markdown .klippy}
-`r ''````{r klippy, echo=FALSE, include=TRUE}
-klippy::klippy(size = 'medium')
 ```
 ````
 
