@@ -17,7 +17,8 @@ added to all \code{HTML <pre>} elements having an \code{HTML <code>}
 element as a child.}
 }
 \value{
-An \code{HTML \link[htmltools]{tag} object}.
+An HTML tag object that can be rendered as HTML using
+  \code{\link{as.character}()}.
 }
 \description{
 \code{klippy} insert copy to clipboard buttons (or "klippies") in \code{R}
@@ -41,23 +42,6 @@ option}. "Klippy" buttons are not rendered if the browser does not support
 \code{clipboard.js} library (see \href{https://clipboardjs.com/}{here} for
 details).
 }
-\section{HTML Dependencies}{
-
-\code{klippy} package includes several third parties \code{JavaScript}
-libraries that are declared as \code{HTML} dependencies:
-\itemize{
-  \item \code{jQuery-1.11.3}, (c) jQuery Foundation, Inc.
-  \href{https://jquery.org/license/}{MIT license}.
-  \href{https://jquery.com/}{Website}.
-  \item \code{Bootstrap-3.3.5}, (c) Twitter, Inc.
-  \href{https://github.com/twbs/bootstrap/blob/v3.3.5/LICENSE}{MIT license}.
-  \href{http://getbootstrap.com}{Website}.
-  \item \code{clipboard.js-1.7.1}, (c) Zeno Rocha
-  \email{hi@zenorocha.com}.
-  \href{http://zenorocha.mit-license.org/}{MIT license}.
-  \href{https://clipboardjs.com/}{Website}.}
-}
-
 \examples{
 tf <- tempfile(fileext = c(".Rmd", ".html"))
 writeLines(
@@ -77,5 +61,6 @@ writeLines(
 \dontrun{
 rmarkdown::render(tf[1], "html_document", tf[2])
 browseURL(paste0("file://", tf[2]))}
+
 
 }

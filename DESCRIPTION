@@ -3,12 +3,6 @@ Title: Copy to Clipboard Buttons for R Markdown HTML Documents
 Version: 0.0.0.9100
 Authors@R: c(
   person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre")),
-  person(family = "jQuery Foundation, Inc", role = "cph",
-         comment = "jQuery library"),
-  person(family = "jQuery contributors", role = c("ctb", "cph"),
-         comment = "jQuery library; authors listed in inst/htmldependencies/lib/jQuery-AUTHORS.txt"),
-  person(family = "Twitter, Inc", role = "cph",
-         comment = "Bootstrap library"),
   person("Zeno", "Rocha", email = "hi@zenorocha.com", role = c("cph"),
          comment = "clipboard.js library"),
   person(family = "GitHub, Inc.", role = "cph",
@@ -18,10 +12,10 @@ Maintainer: Romain Lesur <romain.lesur@gmail.com>
 Description: Insert copy to clipboard buttons in HTML documents generated
     with 'rmarkdown'. This package is suited for a call in a 'knitr' chunk. 
     Buttons events are rendered using 'clipboard.js' library and 'Bootstrap.js' 
-    'Tooltip' plugin. 
+    Tooltip plugin. 
 Depends: R (>= 2.14.1)
-Suggests: knitr (>= 1.16), rmarkdown (>= 1.2), prettydoc (>= 0.2.0)
-Imports: assertthat (>= 0.2.0), htmltools (>= 0.3.5), stringi(>= 0.5-2) 
+Suggests: knitr (>= 1.16), prettydoc (>= 0.2.0)
+Imports: assertthat (>= 0.2.0), htmltools (>= 0.3.5), rmarkdown (>= 0.9.6), stringi(>= 0.5-2) 
 License: MIT + file LICENSE
 URL: https://github.com/RLesur/klippy
 BugReports: https://github.com/RLesur/klippy/issues
