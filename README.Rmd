@@ -53,13 +53,20 @@ To use `clipboard.js` in Shiny, see `rclipboard` ([CRAN](https://cran.r-project.
 
 ## Credits
 
-The following library is distributed with `klippy`:  
-**clipboard.js** (version: 1.7.1) (c) Zeno Rocha <hi@zenorocha.com>  
-MIT license: http://zenorocha.mit-license.org/  
-Website: https://clipboardjs.com/  
-GitHub: https://github.com/zenorocha/clipboard.js/ 
+The following library is distributed with `klippy`:     
 
-The clipboard icon `clippy.svg` is part of:  
-**GitHub Octicons** (version: 6.0.1) (c) GitHub, Inc.  
-MIT license: https://github.com/primer/octicons/blob/v6.0.1/LICENSE  
+**clipboard.js** (version: 1.7.1) (c) Zeno Rocha <hi@zenorocha.com>     
+
+MIT license: http://zenorocha.mit-license.org/
+
+Website: https://clipboardjs.com/
+
+GitHub: https://github.com/zenorocha/clipboard.js/      
+
+The clipboard icon `clippy.svg` is part of:
+
+**GitHub Octicons** (version: 6.0.1) (c) GitHub, Inc.
+
+MIT license: https://github.com/primer/octicons/blob/v6.0.1/LICENSE
+
 Website: https://octicons.github.com/
