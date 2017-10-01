@@ -2,7 +2,7 @@
 
 * `klippies` are auto-sized. Argument `size` is removed.
 
-* `klippy` icon is changed: Octicons' `clippy.svg` is used instead of `glyphicon`.
+* `klippy` icon is changed: octicons' `clippy.svg` is used instead of `glyphicon`.
 
 * Remove the distribution of `jQuery` and `Bootstrap`: calls to `rmarkdown::html_dependency_*` are preferred.
 
