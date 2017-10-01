@@ -10,21 +10,23 @@ function addClassKlippyTo(selector) {
   });
 }
 
-function changeTooltipMessage(element,msg) {
+function changeTooltipMessage(element, msg) {
   var tooltipOriginalTitle=element.getAttribute('data-original-title');
   element.setAttribute('data-original-title',msg);
   $(element).tooltip('show');
-  element.setAttribute('data-original-title',tooltipOriginalTitle);
+  element.setAttribute('data-original-title', tooltipOriginalTitle);
 }
 
-function initKlippy(buttonSizeClass) {
+function initKlippy() {
   $(document).ready(function() {
-    var clippyHref=document.getElementById("octicons-1-attachment").href;
-    // Add klippy buttons:
-    $("<button type='button' class='btn-klippy' title='Copy to clipboard' aria-hidden='true' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><img class='octicon' src='"+clippyHref+"' alt='Copy'></button>").insertBefore($(".klippy > code"));
+    var clippyHref = document.getElementById("octicons-1-attachment").href;
+    var klippyButton = "<button type='button' class='btn btn-default btn-klippy' title='Copy to clipboard' aria-hidden='true' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><img class='octicon' src='"+clippyHref+"' alt='Copy'></button>";
+
+    // Insert klippy buttons:
+    $(klippyButton).insertBefore($(".klippy > code"));
 
     // Initialize tooltips:
-    $('.btn-klippy').each(function(index){
+    $('.btn-klippy').each(function(index) {
       $this=$(this);
       // Auto-size img element (child of button):
       var paddingContainer=$this.parent().css('padding-left');
@@ -50,16 +52,16 @@ function initKlippy(buttonSizeClass) {
       }
     });
 
-    clipboardKlippies.on('success',function(e){
+    clipboardKlippies.on('success', function(e) {
       // For debugging:
       //console.info('Action:', e.action);
       //console.info('Text:', e.text);
       //console.info('Trigger:', e.trigger);
-      changeTooltipMessage(e.trigger,'Copied!');
+      changeTooltipMessage(e.trigger, 'Copied!');
       e.clearSelection();
     });
 
-    clipboardKlippies.on('error',function(){
+    clipboardKlippies.on('error', function() {
       // For debugging:
       //console.error('Error during copying');
       changeTooltipMessage(e.trigger,'Press Ctrl+C or Command+C to copy');
@@ -67,8 +69,8 @@ function initKlippy(buttonSizeClass) {
   });
 }
 
-function addKlippy(buttonSizeClass) {
-  if(Clipboard.isSupported()) initKlippy(buttonSizeClass);
+function addKlippy() {
+  if(Clipboard.isSupported()) initKlippy();
 }
 
 

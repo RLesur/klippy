@@ -47,7 +47,7 @@
 #' @importFrom stringi stri_extract_all_words
 #'
 #' @export
-klippy <- function(lang = "r markdown", size = "small", all_precode = FALSE) {
+klippy <- function(lang = "r markdown", all_precode = FALSE) {
 
   #' @param lang A character string or a vector of character strings with
   #'     language names. If a character string contains multiple languages
@@ -62,13 +62,6 @@ klippy <- function(lang = "r markdown", size = "small", all_precode = FALSE) {
     is.logical(all_precode),
     assertthat::is.scalar(all_precode),
     assertthat::noNA(all_precode)
-  )
-
-  #' @param size Size of the klippy button. Valid values include "small",
-  #'     "medium" and "large".
-  assertthat::assert_that(
-    assertthat::is.string(size),
-    size %in% c("small", "medium", "large")
   )
 
   #' @section HTML Dependencies:
@@ -118,9 +111,10 @@ klippy <- function(lang = "r markdown", size = "small", all_precode = FALSE) {
     name = 'klippy',
     version = '0.0.0.9100',
     src = 'htmldependencies/lib/klippy-0.0.0.9100',
-    script = 'js/klippy.js',
-    stylesheet = 'css/klippy.css',
-    package = 'klippy'
+    script = 'js/klippy.min.js',
+    stylesheet = 'css/klippy.min.css',
+    package = 'klippy',
+    all_files = FALSE
   )
 
   # Build JS script
@@ -143,9 +137,7 @@ klippy <- function(lang = "r markdown", size = "small", all_precode = FALSE) {
   }
 
   # Add a klippy button to all elements with klippy class attribute:
-  btn_size_classes <- list(small = "btn-sm", medium = "", large = "btn-lg")
-  btn_class <- btn_size_classes[[size]]
-  js_script <- paste(js_script, sprintf('  addKlippy("%s");\n', btn_class), sep = '\n')
+  js_script <- paste(js_script, '  addKlippy();\n', sep = '\n')
 
   #' @return An \code{HTML \link[htmltools]{tag} object}.
   # Attach dependencies to JS script:
