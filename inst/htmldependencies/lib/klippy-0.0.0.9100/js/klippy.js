@@ -21,7 +21,7 @@ function initKlippy(buttonSizeClass) {
   $(document).ready(function() {
     var clippyHref=document.getElementById("octicons-1-attachment").href;
     // Add klippy buttons:
-    $("<button type='button' class='btn btn-default btn-klippy btn-sm"+buttonSizeClass+"' title='Copy to clipboard' aria-hidden='true' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><img class='octicon' src='"+clippyHref+"' alt='Copy'></button>").insertBefore($(".klippy > code"));
+    $("<button type='button' class='btn-klippy' title='Copy to clipboard' aria-hidden='true' data-toggle='tooltip' data-placement='right auto' data-trigger='hover' data-clipboard-klippy><img class='octicon' src='"+clippyHref+"' alt='Copy'></button>").insertBefore($(".klippy > code"));
 
     // Initialize tooltips:
     $('.btn-klippy').each(function(index){
