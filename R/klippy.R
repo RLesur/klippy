@@ -32,8 +32,8 @@ html_dependency_clipboard <- function() {
 html_dependency_klippy <- function() {
   htmltools::htmlDependency(
     name = 'klippy',
-    version = '0.0.0.9100',
-    src = 'htmldependencies/lib/klippy-0.0.0.9100',
+    version = '0.0.0.9200',
+    src = 'htmldependencies/lib/klippy-0.0.0.9200',
     script = 'js/klippy.min.js',
     stylesheet = 'css/klippy.min.css',
     package = 'klippy',
