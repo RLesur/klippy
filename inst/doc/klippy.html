@@ -112,7 +112,7 @@ klippy::klippy()
 <h2>Code block selection</h2>
 <p>You can select which of the code blocks get a klippy.</p>
 <p>First, insert this chunk anywhere in your <code>Rmd</code> file:</p>
-<div class="sourceCode"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown">```{r klippy, echo=FALSE, include=TRUE}
+<div class="sourceCode" id="code-block-ex"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown">```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy('')
 ```</code></pre></div>
 <p>Then, add the <code>klippy</code> class to a code chunk:</p>
@@ -126,13 +126,6 @@ summary(cars)
 <p>For example, if you want to add klippies to <code>R</code> and <code>python</code> code blocks, add this chunk anywhere in your <code>Rmd</code> file:</p>
 <div class="sourceCode"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown">```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy('r python')
-```</code></pre></div>
-</div>
-<div id="klippy-size" class="section level2">
-<h2>Klippy size</h2>
-<p>According to your <code>CSS</code>, you may want to modify klippy size. Three sizes (small, medium and large) are available. For example, if you want to use medium size:</p>
-<div class="sourceCode"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown">```{r klippy, echo=FALSE, include=TRUE}
-klippy::klippy(size = 'medium')
 ```</code></pre></div>
 </div>
 <div id="browser-support" class="section level2">
