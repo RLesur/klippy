@@ -4,16 +4,13 @@
 \alias{klippy}
 \title{Insert copy to clipboard buttons in HTML documents}
 \usage{
-klippy(lang = "r markdown", size = "small", all_precode = FALSE)
+klippy(lang = "r markdown", all_precode = FALSE)
 }
 \arguments{
 \item{lang}{A character string or a vector of character strings with
 language names. If a character string contains multiple languages
 names, these names have to be separated by boundaries (e.g., spaces).
 Void string can be passed to \code{lang} argument.}
-
-\item{size}{Size of the klippy button. Valid values include "small",
-"medium" and "large".}
 
 \item{all_precode}{A logical scalar. If \code{TRUE}, a "klippy" is
 added to all \code{HTML <pre>} elements having an \code{HTML <code>}
