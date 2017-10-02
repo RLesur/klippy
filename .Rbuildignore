@@ -5,3 +5,4 @@
 ^README\.Rmd$
 ^index\.Rmd$
 ^index\.html$
+^pkgdown$
