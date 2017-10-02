@@ -18,6 +18,6 @@ An object that can be included in a list of dependencies passed to
   \code{\link{attachDependencies}}.
 }
 \description{
-These functions provide HTML dependencies for `clipboard.js`, `klippy` and
-`octicon-clippy` for re-use.
+These functions provide HTML dependencies for \code{clipboard.js},
+\code{klippy} and \code{octicon-clippy} for re-use.
 }

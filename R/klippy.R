@@ -9,8 +9,8 @@ NULL
 
 #' Provide HTML dependencies
 #'
-#' These functions provide HTML dependencies for `clipboard.js`, `klippy` and
-#' `octicon-clippy` for re-use.
+#' These functions provide HTML dependencies for \code{clipboard.js},
+#' \code{klippy} and \code{octicon-clippy} for re-use.
 #' @name html-dependencies
 #' @inherit htmltools::htmlDependency return
 NULL
