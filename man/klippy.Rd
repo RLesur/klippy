@@ -18,7 +18,7 @@ element as a child.}
 }
 \value{
 An HTML tag object that can be rendered as HTML using
-  \code{\link{as.character}()}.
+\code{\link{as.character}()}.
 }
 \description{
 \code{klippy} insert copy to clipboard buttons (or "klippies") in \code{R}

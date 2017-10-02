@@ -12,7 +12,9 @@ NULL
 #' These functions provide HTML dependencies for \code{clipboard.js},
 #' \code{klippy} and \code{octicon-clippy} for re-use.
 #' @name html-dependencies
-#' @inherit htmltools::htmlDependency return
+#' @return An object that can be included in a list of dependencies passed to
+#' \code{\link[htmltools]{attachDependencies}}.
+#' @family HTML dependencies functions
 NULL
 
 #' @rdname html-dependencies
@@ -53,7 +55,14 @@ html_dependency_octicon_clippy <- function() {
   )
 }
 
-#' @rdname html-dependencies
+#' List klippy dependencies
+#'
+#' This function is used to get the list of \code{klippy} dependencies.
+#'
+#' @return A list of dependencies that can be passed to
+#' \code{\link[htmltools]{attachDependencies}} or
+#' \code{\link[rmarkdown]{html_document_base}}.
+#' @family HTML dependencies functions
 #' @export
 klippy_dependencies <- function() {
   return(list(rmarkdown::html_dependency_jquery(),
@@ -149,7 +158,8 @@ klippy <- function(lang = "r markdown", all_precode = FALSE) {
   # Add a klippy button to all elements with klippy class attribute:
   js_script <- paste(js_script, '  addKlippy();\n', sep = '\n')
 
-  #' @inherit htmltools::tag return
+  #' @return An HTML tag object that can be rendered as HTML using
+  #' \code{\link{as.character}()}.
   # Attach dependencies to JS script:
   klippyScript <- htmltools::attachDependencies(
     htmltools::tags$script(js_script),

@@ -5,7 +5,6 @@
 \alias{html_dependency_clipboard}
 \alias{html_dependency_klippy}
 \alias{html_dependency_octicon_clippy}
-\alias{klippy_dependencies}
 \title{Provide HTML dependencies}
 \usage{
 html_dependency_clipboard()
@@ -13,14 +12,15 @@ html_dependency_clipboard()
 html_dependency_klippy()
 
 html_dependency_octicon_clippy()
-
-klippy_dependencies()
 }
 \value{
 An object that can be included in a list of dependencies passed to
-  \code{\link{attachDependencies}}.
+\code{\link[htmltools]{attachDependencies}}.
 }
 \description{
 These functions provide HTML dependencies for \code{clipboard.js},
 \code{klippy} and \code{octicon-clippy} for re-use.
+}
+\seealso{
+Other HTML dependencies functions: \code{\link{klippy_dependencies}}
 }

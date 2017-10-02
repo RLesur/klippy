@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Provide HTML dependencies — html-dependencies â€¢ klippy</title>
+<title>List klippy dependencies — klippy_dependencies â€¢ klippy</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -98,28 +98,24 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Provide HTML dependencies</h1>
+    <h1>List klippy dependencies</h1>
     </div>
 
     
-    <p>These functions provide HTML dependencies for <code>clipboard.js</code>,
-<code>klippy</code> and <code>octicon-clippy</code> for re-use.</p>
+    <p>This function is used to get the list of <code>klippy</code> dependencies.</p>
     
 
-    <pre class="usage"><span class='fu'>html_dependency_clipboard</span>()
-
-<span class='fu'>html_dependency_klippy</span>()
-
-<span class='fu'>html_dependency_octicon_clippy</span>()</pre>
+    <pre class="usage"><span class='fu'>klippy_dependencies</span>()</pre>
         
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An object that can be included in a list of dependencies passed to
-<code><a href='http://www.rdocumentation.org/packages/htmltools/topics/htmlDependencies'>attachDependencies</a></code>.</p>
+    <p>A list of dependencies that can be passed to
+<code><a href='http://www.rdocumentation.org/packages/htmltools/topics/htmlDependencies'>attachDependencies</a></code> or
+<code><a href='http://www.rdocumentation.org/packages/rmarkdown/topics/html_document_base'>html_document_base</a></code>.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p>Other HTML dependencies functions: <code><a href='klippy_dependencies.html'>klippy_dependencies</a></code></p>
+    <p>Other HTML dependencies functions: <code><a href='html-dependencies.html'>html-dependencies</a></code></p>
     
 
   </div>
