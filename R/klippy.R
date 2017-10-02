@@ -53,6 +53,18 @@ html_dependency_octicon_clippy <- function() {
   )
 }
 
+#' @rdname html-dependencies
+#' @export
+klippy_dependencies <- function() {
+  return(list(rmarkdown::html_dependency_jquery(),
+              rmarkdown::html_dependency_bootstrap("default"),
+              html_dependency_clipboard(),
+              html_dependency_octicon_clippy(),
+              html_dependency_klippy()
+  ))
+}
+
+
 #' Insert copy to clipboard buttons in HTML documents
 #'
 #' \code{klippy} insert copy to clipboard buttons (or "klippies") in \code{R}
@@ -141,12 +153,7 @@ klippy <- function(lang = "r markdown", all_precode = FALSE) {
   # Attach dependencies to JS script:
   klippyScript <- htmltools::attachDependencies(
     htmltools::tags$script(js_script),
-    list(rmarkdown::html_dependency_jquery(),
-         rmarkdown::html_dependency_bootstrap("default"),
-         html_dependency_clipboard(),
-         html_dependency_octicon_clippy(),
-         html_dependency_klippy()
-    )
+    klippy_dependencies()
   )
 
   return(klippyScript)

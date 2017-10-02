@@ -5,6 +5,7 @@
 \alias{html_dependency_clipboard}
 \alias{html_dependency_klippy}
 \alias{html_dependency_octicon_clippy}
+\alias{klippy_dependencies}
 \title{Provide HTML dependencies}
 \usage{
 html_dependency_clipboard()
@@ -12,6 +13,8 @@ html_dependency_clipboard()
 html_dependency_klippy()
 
 html_dependency_octicon_clippy()
+
+klippy_dependencies()
 }
 \value{
 An object that can be included in a list of dependencies passed to

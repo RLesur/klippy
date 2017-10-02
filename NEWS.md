@@ -1,3 +1,7 @@
+# klippy 0.0.0.9300 (unreleased)
+
+* creates `klippy_dependencies` function
+
 # klippy 0.0.0.9201 (pre-release)
 
 * `klippies` are auto-sized. Argument `size` is removed.
