@@ -6,7 +6,7 @@ Authors@R: c(
   person("Zeno", "Rocha", email = "hi@zenorocha.com", role = c("cph"),
          comment = "clipboard.js library"),
   person(family = "GitHub, Inc.", role = "cph",
-         comment = "Octicons library")
+         comment = "Primer Tooltips library & Octicons library")
   )
 Maintainer: Romain Lesur <romain.lesur@gmail.com>
 Description: Insert copy to clipboard buttons in HTML documents generated
@@ -14,8 +14,8 @@ Description: Insert copy to clipboard buttons in HTML documents generated
     Buttons events are rendered using 'clipboard.js' library and 'Bootstrap.js' 
     Tooltip plugin. 
 Depends: R (>= 2.14.1)
-Suggests: knitr (>= 1.16), prettydoc (>= 0.2.0)
-Imports: assertthat (>= 0.2.0), htmltools (>= 0.3.5), rmarkdown (>= 0.9.6), stringi(>= 0.5-2) 
+Suggests: knitr (>= 1.16), prettydoc (>= 0.2.0), rmarkdown (>= 0.9.6)
+Imports: assertthat (>= 0.2.0), htmltools (>= 0.3.5), stringi(>= 0.5-2) 
 License: MIT + file LICENSE
 URL: https://github.com/RLesur/klippy
 BugReports: https://github.com/RLesur/klippy/issues

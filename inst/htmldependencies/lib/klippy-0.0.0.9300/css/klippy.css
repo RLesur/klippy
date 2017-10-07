@@ -1,19 +1,23 @@
+.klippy {
+  overflow: visible;
+  position: relative;
+}
+
 .btn-klippy {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: inherit;
   border: 0;
   padding: 0 0 0 1px;
+  background-color: transparent;
 }
 
-.klippy {
-  overflow: visible;
-  position: relative;
+.btn-klippy > div {
+  margin: 0;
+  padding: 0;
 }
 
 .octicon {
   display: inline-block;
   vertical-align: top;
 }
-
