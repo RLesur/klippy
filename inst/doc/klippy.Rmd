@@ -14,7 +14,7 @@ vignette: >
 ---
 
 ```{r klippy, echo=FALSE, include=TRUE}
-klippy::klippy()
+klippy::klippy('')
 ```
 
 ## Common use

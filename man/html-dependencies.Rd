@@ -3,11 +3,14 @@
 \name{html-dependencies}
 \alias{html-dependencies}
 \alias{html_dependency_clipboard}
+\alias{html_dependency_primer_tooltips}
 \alias{html_dependency_klippy}
 \alias{html_dependency_octicon_clippy}
 \title{Provide HTML dependencies}
 \usage{
 html_dependency_clipboard()
+
+html_dependency_primer_tooltips()
 
 html_dependency_klippy()
 

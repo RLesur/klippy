@@ -1,6 +1,10 @@
 # klippy 0.0.0.9300 (unreleased)
 
-* creates `klippy_dependencies` function
+* tooltips are rendered with Primer Tooltips instead of Bootstrap Tooltips (removes Bootstrap dependency).
+
+* javascript code of `klippy` written in Vanilla JS (removes jQuery dependency).
+
+* creates `klippy_dependencies` function.
 
 # klippy 0.0.0.9201 (pre-release)
 

@@ -3,8 +3,6 @@
 #' @importFrom htmltools tags
 #' @importFrom htmltools attachDependencies
 #' @importFrom stringi stri_extract_all_words
-#' @importFrom rmarkdown html_dependency_jquery
-#' @importFrom rmarkdown html_dependency_bootstrap
 NULL
 
 #' Provide HTML dependencies
@@ -23,8 +21,26 @@ html_dependency_clipboard <- function() {
   htmltools::htmlDependency(
     name = 'clipboard',
     version = '1.7.1',
-    src = 'htmldependencies/lib/clipboard-1.7.1',
+    src = c(
+      file = 'htmldependencies/lib/clipboard-1.7.1',
+      href = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/'
+      ),
     script = 'clipboard.min.js',
+    package = 'klippy'
+  )
+}
+
+#' @rdname html-dependencies
+#' @export
+html_dependency_primer_tooltips <- function() {
+  htmltools::htmlDependency(
+    name = 'primer-tooltips',
+    version = '1.4.0',
+    src = c(
+      file = 'htmldependencies/lib/primer-tooltips-1.4.0',
+      href = 'https://cdn.jsdelivr.net/npm/primer-tooltips@1.4.0/build/'
+      ),
+    stylesheet = 'build.css',
     package = 'klippy'
   )
 }
@@ -34,10 +50,10 @@ html_dependency_clipboard <- function() {
 html_dependency_klippy <- function() {
   htmltools::htmlDependency(
     name = 'klippy',
-    version = '0.0.0.9200',
-    src = 'htmldependencies/lib/klippy-0.0.0.9200',
-    script = 'js/klippy.min.js',
-    stylesheet = 'css/klippy.min.css',
+    version = '0.0.0.9300',
+    src = 'htmldependencies/lib/klippy-0.0.0.9300',
+    script = 'js/klippy.js',
+    stylesheet = 'css/klippy.css',
     package = 'klippy',
     all_files = FALSE
   )
@@ -65,14 +81,12 @@ html_dependency_octicon_clippy <- function() {
 #' @family HTML dependencies functions
 #' @export
 klippy_dependencies <- function() {
-  return(list(rmarkdown::html_dependency_jquery(),
-              rmarkdown::html_dependency_bootstrap("default"),
-              html_dependency_clipboard(),
-              html_dependency_octicon_clippy(),
-              html_dependency_klippy()
+  return(list(html_dependency_clipboard(),
+              html_dependency_primer_tooltips(),
+              html_dependency_klippy(),
+              html_dependency_octicon_clippy()
   ))
 }
-
 
 #' Insert copy to clipboard buttons in HTML documents
 #'
