@@ -21,3 +21,14 @@
   display: inline-block;
   vertical-align: top;
 }
+
+.btn-klippy:focus {
+  outline: 0;
+}
+
+.btn-klippy:focus .octicon {
+  border-width: thin;
+  border-style: dotted;
+  border-color: gray;
+  border-radius: 3px;
+}
