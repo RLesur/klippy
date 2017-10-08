@@ -40,8 +40,9 @@ html_dependency_primer_tooltips <- function() {
       file = 'htmldependencies/lib/primer-tooltips-1.4.0',
       href = 'https://cdn.jsdelivr.net/npm/primer-tooltips@1.4.0/build/'
       ),
-    stylesheet = 'build.css',
-    package = 'klippy'
+    stylesheet = 'build.min.css',
+    package = 'klippy',
+    all_files = FALSE
   )
 }
 
@@ -52,8 +53,8 @@ html_dependency_klippy <- function() {
     name = 'klippy',
     version = '0.0.0.9300',
     src = 'htmldependencies/lib/klippy-0.0.0.9300',
-    script = 'js/klippy.js',
-    stylesheet = 'css/klippy.css',
+    script = 'js/klippy.min.js',
+    stylesheet = 'css/klippy.min.css',
     package = 'klippy',
     all_files = FALSE
   )
