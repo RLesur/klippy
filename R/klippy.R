@@ -67,8 +67,9 @@ html_dependency_octicon_clippy <- function() {
     name = 'octicons',
     version = '6.0.1',
     src = 'htmldependencies/lib/octicons-6.0.1',
-    attachment = 'clippy.svg',
-    package = 'klippy'
+    attachment = 'clippy.min.svg',
+    package = 'klippy',
+    all_files = FALSE
   )
 }
 
