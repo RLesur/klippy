@@ -40,7 +40,7 @@ html_dependency_primer_tooltips <- function() {
       file = 'htmldependencies/lib/primer-tooltips-1.4.0',
       href = 'https://cdn.jsdelivr.net/npm/primer-tooltips@1.4.0/build/'
       ),
-    stylesheet = 'build.min.css',
+    stylesheet = 'build.css',
     package = 'klippy',
     all_files = FALSE
   )
