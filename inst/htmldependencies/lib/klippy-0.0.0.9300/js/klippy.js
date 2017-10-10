@@ -27,7 +27,9 @@ function getOcticonClippy() {
 function initKlippy() {
   document.addEventListener("DOMContentLoaded", function() {
     var clippyHref = document.getElementById("octicons-1-attachment").href;
-    var klippyButton = "<button type='button' class='btn-klippy tooltipped tooltipped-e tooltipped-no-delay' aria-label='Copy to clipboard' onblur='changeTooltipMessage(this,&quot;Copy to clipboard&quot;)' data-clipboard-klippy><div><img class='octicon' src='"+clippyHref+"' alt='Copy'></div></button>";
+    var klippyButton = "<button type='button' class='btn-klippy tooltipped tooltipped-e tooltipped-no-delay' aria-label='Copy to clipboard' onblur='changeTooltipMessage(this,&quot;Copy to clipboard&quot;)' data-clipboard-klippy><object class='octicon' data='"+clippyHref+"' type='image/svg+xml'></object></button>";
+    // clickable object:
+    // https://teamtreehouse.com/community/how-do-you-make-a-svg-clickable
 
     // Insert klippy buttons:
     var codeNodeList = document.querySelectorAll(".klippy > code");
@@ -43,6 +45,9 @@ function initKlippy() {
       var paddingParent = window.getComputedStyle(klippyParent).getPropertyValue('padding-left');
       currentKlippy.querySelector('.octicon').setAttribute('width', paddingParent);
     }
+
+    // Color klippies:
+    // https://stackoverflow.com/questions/4476526/do-i-use-img-object-or-embed-for-svg-files
 
     // Initialize clipboard:
     var clipboardKlippies=new Clipboard('[data-clipboard-klippy]',{
