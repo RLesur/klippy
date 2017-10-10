@@ -53,7 +53,7 @@ html_dependency_klippy <- function() {
     name = 'klippy',
     version = '0.0.0.9300',
     src = 'htmldependencies/lib/klippy-0.0.0.9300',
-    script = 'js/klippy.min.js',
+    script = 'js/klippy.js',
     stylesheet = 'css/klippy.min.css',
     package = 'klippy',
     all_files = FALSE
