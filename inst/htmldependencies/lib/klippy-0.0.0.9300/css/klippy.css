@@ -12,7 +12,7 @@
   background-color: transparent;
 }
 
-.btn-klippy > object {
+.btn-klippy > div {
   margin: 0;
   padding: 0;
 }
