@@ -2,7 +2,8 @@ Package: klippy
 Title: Copy to Clipboard Buttons for R Markdown HTML Documents
 Version: 0.0.0.9300
 Authors@R: c(
-  person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre")),
+  person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre"),
+         comment = c(ORCID = "0000-0002-0721-5595")),
   person("Zeno", "Rocha", email = "hi@zenorocha.com", role = c("cph"),
          comment = "clipboard.js library"),
   person(family = "GitHub, Inc.", role = "cph",
@@ -17,7 +18,7 @@ Depends: R (>= 2.14.1)
 Suggests: knitr (>= 1.16), prettydoc (>= 0.2.0), rmarkdown (>= 0.9.6)
 Imports: assertthat (>= 0.2.0), htmltools (>= 0.3.5), stringi(>= 0.5-2) 
 License: MIT + file LICENSE
-URL: https://github.com/RLesur/klippy
+URL: https://rlesur.github.io/klippy, https://github.com/RLesur/klippy
 BugReports: https://github.com/RLesur/klippy/issues
 Encoding: UTF-8
 LazyData: true
