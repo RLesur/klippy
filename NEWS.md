@@ -1,4 +1,4 @@
-# klippy 0.0.0.9400 (unreleased)
+# klippy 0.0.0.9400 (pre-release)
 
 * klippies are colored
 
