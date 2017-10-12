@@ -37,7 +37,8 @@ klippy::klippy()
 Browser Support
 ---------------
 
-For supported browsers, see [`clipboard.js` documentation](https://clipboardjs.com/#browser-support).
+The `klippy` package uses `clipboard.js`. Tooltips are rendered with `Primer Tooltips` `CSS`.
+Glue code is in Vanilla JS. For supported browsers, see [`clipboard.js` documentation](https://clipboardjs.com/#browser-support).
 
 Bugs/Feature requests
 ---------------------
