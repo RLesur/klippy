@@ -51,23 +51,10 @@ html_dependency_primer_tooltips <- function() {
 html_dependency_klippy <- function() {
   htmltools::htmlDependency(
     name = 'klippy',
-    version = '0.0.0.9300',
-    src = 'htmldependencies/lib/klippy-0.0.0.9300',
-    script = 'js/klippy.js',
-    stylesheet = 'css/klippy.css',
-    package = 'klippy',
-    all_files = FALSE
-  )
-}
-
-#' @rdname html-dependencies
-#' @export
-html_dependency_octicon_clippy <- function() {
-  htmltools::htmlDependency(
-    name = 'octicons',
-    version = '6.0.1',
-    src = 'htmldependencies/lib/octicons-6.0.1',
-    attachment = 'clippy.svg',
+    version = '0.0.0.9400',
+    src = 'htmldependencies/lib/klippy-0.0.0.9400',
+    script = 'js/klippy.min.js',
+    stylesheet = 'css/klippy.min.css',
     package = 'klippy',
     all_files = FALSE
   )
@@ -85,8 +72,7 @@ html_dependency_octicon_clippy <- function() {
 klippy_dependencies <- function() {
   return(list(html_dependency_clipboard(),
               html_dependency_primer_tooltips(),
-              html_dependency_klippy(),
-              html_dependency_octicon_clippy()
+              html_dependency_klippy()
   ))
 }
 

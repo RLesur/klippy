@@ -5,7 +5,6 @@
 \alias{html_dependency_clipboard}
 \alias{html_dependency_primer_tooltips}
 \alias{html_dependency_klippy}
-\alias{html_dependency_octicon_clippy}
 \title{Provide HTML dependencies}
 \usage{
 html_dependency_clipboard()
@@ -13,8 +12,6 @@ html_dependency_clipboard()
 html_dependency_primer_tooltips()
 
 html_dependency_klippy()
-
-html_dependency_octicon_clippy()
 }
 \value{
 An object that can be included in a list of dependencies passed to

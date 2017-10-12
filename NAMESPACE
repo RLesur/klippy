@@ -2,7 +2,6 @@
 
 export(html_dependency_clipboard)
 export(html_dependency_klippy)
-export(html_dependency_octicon_clippy)
 export(html_dependency_primer_tooltips)
 export(klippy)
 export(klippy_dependencies)
