@@ -51,8 +51,8 @@ html_dependency_primer_tooltips <- function() {
 html_dependency_klippy <- function() {
   htmltools::htmlDependency(
     name = 'klippy',
-    version = '0.0.0.9400',
-    src = 'htmldependencies/lib/klippy-0.0.0.9400',
+    version = '0.0.0.9500',
+    src = 'htmldependencies/lib/klippy-0.0.0.9500',
     script = 'js/klippy.min.js',
     stylesheet = 'css/klippy.min.css',
     package = 'klippy',

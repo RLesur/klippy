@@ -1,6 +1,6 @@
 Package: klippy
 Title: Copy to Clipboard Buttons for R Markdown HTML Documents
-Version: 0.0.0.9400
+Version: 0.0.0.9500
 Authors@R: c(
   person("Romain", "Lesur", email = "romain.lesur@gmail.com", role = c("aut", "cre"),
          comment = c(ORCID = "0000-0002-0721-5595")),

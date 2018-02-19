@@ -1,3 +1,9 @@
+# klippy 0.0.0.9500
+
+## BUG FIX
+
+* `klippy` now renders well with [Hugo Academic](https://github.com/gcushen/hugo-academic) (thanks to [Emerson M. Del Ponte](https://github.com/emdelponte), #8).
+
 # klippy 0.0.0.9400 (pre-release)
 
 * klippies are colored
