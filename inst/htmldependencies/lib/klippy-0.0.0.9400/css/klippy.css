@@ -17,9 +17,10 @@
   padding: 0;
 }
 
-.octicon {
+.btn-klippy .octicon {
   display: inline-block;
   vertical-align: top;
+  margin: 0;
 }
 
 .btn-klippy:focus {
