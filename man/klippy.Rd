@@ -5,7 +5,7 @@
 \title{Insert copy to clipboard buttons in HTML documents}
 \usage{
 klippy(lang = "r markdown", all_precode = FALSE, position = c("top",
-  "left"))
+  "left"), color = "auto")
 }
 \arguments{
 \item{lang}{A character string or a vector of character strings with
@@ -20,6 +20,13 @@ element as a child.}
 \item{position}{A character vector with \code{klippy} position.
 Accepted values are "top", "bottom", "left" and "right".
 Abbreviated forms are allowed.}
+
+\item{color}{string of any of the three kinds of \code{R} color
+specifications, i.e., either a color name (as listed by
+\code{\link[grDevices]{colors}()}), a hexadecimal string of the form
+\code{"#rrggbb"} or \code{"#rrggbbaa"}
+(see \code{\link[grDevices]{rgb}()}), or a positive integer \code{i}
+meaning \code{\link[grDevices]{palette}()[i]}.}
 }
 \value{
 An HTML tag object that can be rendered as HTML using

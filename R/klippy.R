@@ -122,7 +122,8 @@ klippy_dependencies <- function() {
 #' @export
 klippy <- function(lang = "r markdown",
                    all_precode = FALSE,
-                   position = c("top", "left")) {
+                   position = c("top", "left"),
+                   color = "auto") {
 
   #' @param lang A character string or a vector of character strings with
   #'     language names. If a character string contains multiple languages
@@ -163,6 +164,18 @@ klippy <- function(lang = "r markdown",
     headside <- "top"
   }
 
+  #' @param color string of any of the three kinds of \code{R} color
+  #'     specifications, i.e., either a color name (as listed by
+  #'     \code{\link[grDevices]{colors}()}), a hexadecimal string of the form
+  #'     \code{"#rrggbb"} or \code{"#rrggbbaa"}
+  #'     (see \code{\link[grDevices]{rgb}()}), or a positive integer \code{i}
+  #'     meaning \code{\link[grDevices]{palette}()[i]}.
+  assertthat::assert_that(
+    assertthat::is.scalar(color)
+  )
+  if (color != "auto")
+    color <- get_rgba_color(color)
+
   # Build JS script
   # Initialization:
   js_script <- ''
@@ -195,4 +208,10 @@ klippy <- function(lang = "r markdown",
     htmltools::tags$script(js_script),
     klippy_dependencies()
   )
+}
+
+#' @importFrom grDevices col2rgb rgb
+get_rgba_color <- function(col) {
+  col <- as.data.frame(t(grDevices::col2rgb(col, alpha = TRUE)))
+  with(col, grDevices::rgb(red, green, blue, alpha, maxColorValue = 255))
 }

@@ -16,7 +16,7 @@ Description: Insert copy to clipboard buttons in HTML documents generated
     Tooltip plugin. 
 Depends: R (>= 2.14.1)
 Suggests: knitr (>= 1.16), prettydoc (>= 0.2.0), rmarkdown (>= 0.9.6)
-Imports: assertthat (>= 0.2.0), htmltools (>= 0.3.5), stringi(>= 0.5-2) 
+Imports: assertthat (>= 0.2.0), htmltools (>= 0.3.5), stringi(>= 0.5-2), grDevices 
 License: MIT + file LICENSE
 URL: https://rlesur.github.io/klippy, https://github.com/RLesur/klippy
 BugReports: https://github.com/RLesur/klippy/issues
