@@ -8,7 +8,7 @@ NULL
 #' Provide HTML dependencies
 #'
 #' These functions provide HTML dependencies for \code{clipboard.js},
-#' \code{klippy} and \code{octicon-clippy} for re-use.
+#' \code{klippy} and \code{Primer Tooltips CSS} for re-use.
 #' @name html-dependencies
 #' @return An object that can be included in a list of dependencies passed to
 #' \code{\link[htmltools]{attachDependencies}}.
@@ -120,7 +120,9 @@ klippy_dependencies <- function() {
 #'
 #'
 #' @export
-klippy <- function(lang = "r markdown", all_precode = FALSE) {
+klippy <- function(lang = "r markdown",
+                   all_precode = FALSE,
+                   position = c("top", "left")) {
 
   #' @param lang A character string or a vector of character strings with
   #'     language names. If a character string contains multiple languages
@@ -136,6 +138,30 @@ klippy <- function(lang = "r markdown", all_precode = FALSE) {
     assertthat::is.scalar(all_precode),
     assertthat::noNA(all_precode)
   )
+
+  #' @param position A character vector with \code{klippy} position.
+  #'     Accepted values are "top", "bottom", "left" and "right".
+  #'     Abbreviated forms are allowed.
+  position <- match.arg(position, c("top", "left", "bottom", "right"), several.ok = TRUE)
+  handside <- NULL
+  if ("right" %in% position)
+    handside <- "right"
+  if (is.null(handside))
+    handside <- "left"
+  if ("left" %in% position & handside == "right") {
+    warning('\nKlippy positions are defined to "left".')
+    handside <- "left"
+  }
+
+  headside <- NULL
+  if ("bottom" %in% position)
+    headside <- "bottom"
+  if (is.null(headside))
+    headside <- "top"
+  if ("top" %in% position & headside == "bottom") {
+    warning('\nKlippy positions are defined to "top".')
+    headside <- "top"
+  }
 
   # Build JS script
   # Initialization:
@@ -158,15 +184,15 @@ klippy <- function(lang = "r markdown", all_precode = FALSE) {
   }
 
   # Add a klippy button to all elements with klippy class attribute:
-  js_script <- paste(js_script, '  addKlippy();\n', sep = '\n')
+  js_script <- paste(js_script,
+                     sprintf("  addKlippy('%s', '%s');\n", handside, headside),
+                     sep = '\n')
 
   #' @return An HTML tag object that can be rendered as HTML using
   #' \code{\link{as.character}()}.
   # Attach dependencies to JS script:
-  klippyScript <- htmltools::attachDependencies(
+  htmltools::attachDependencies(
     htmltools::tags$script(js_script),
     klippy_dependencies()
   )
-
-  return(klippyScript)
 }

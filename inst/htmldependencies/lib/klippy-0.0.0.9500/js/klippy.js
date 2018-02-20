@@ -34,10 +34,10 @@ function getUriOcticonClippy() {
   return uriImage;
 }
 
-function initKlippy() {
+function initKlippy(handSide, headSide) {
   document.addEventListener("DOMContentLoaded", function() {
     var image = getUriOcticonClippy();
-    var klippyButton = "<button type='button' class='btn-klippy tooltipped tooltipped-e tooltipped-no-delay' aria-label='Copy to clipboard' onfocusout='changeTooltipMessage(this,&quot;Copy to clipboard&quot;)' data-clipboard-klippy><div><img class='octicon' src='"+image+"' alt='Copy'></div></button>";
+    var klippyButton = "<button type='button' class='btn-klippy tooltipped tooltipped-no-delay' aria-label='Copy to clipboard' onfocusout='changeTooltipMessage(this,&quot;Copy to clipboard&quot;)' data-clipboard-klippy><div><img class='octicon' src='"+image+"' alt='Copy'></div></button>";
 
     // Insert klippy buttons:
     var codeNodeList = document.querySelectorAll(".klippy > code");
@@ -50,8 +50,22 @@ function initKlippy() {
 
     function autoSize(klippy) {
       var klippyParent = klippy.parentElement;
-      var paddingParent = window.getComputedStyle(klippyParent).getPropertyValue('padding-left');
-      klippy.querySelector('.octicon').setAttribute('width', paddingParent);
+      var paddingParent = window.getComputedStyle(klippyParent).getPropertyValue('padding-' + handSide);
+      var icon = klippy.querySelector('.octicon');
+      icon.style.width = paddingParent;
+      icon.style.verticalAlign = headSide;
+      if (handSide === 'right') {
+        klippy.style.right = '0';
+        klippy.className += ' tooltipped-w';
+      } else {
+        klippy.style.left = '0';
+        klippy.className += ' tooltipped-e';
+      }
+      if (headSide === 'bottom') {
+        klippy.style.bottom = '0';
+      } else {
+        klippy.style.top = '0';
+      }
     }
 
     Array.prototype.map.call(klippiesCollection, autoSize);
@@ -74,6 +88,6 @@ function initKlippy() {
   });
 }
 
-function addKlippy() {
-  if(Clipboard.isSupported()) initKlippy();
+function addKlippy(handSide, headSide) {
+  if(Clipboard.isSupported()) initKlippy(handSide, headSide);
 }

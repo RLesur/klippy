@@ -4,7 +4,8 @@
 \alias{klippy}
 \title{Insert copy to clipboard buttons in HTML documents}
 \usage{
-klippy(lang = "r markdown", all_precode = FALSE)
+klippy(lang = "r markdown", all_precode = FALSE, position = c("top",
+  "left"))
 }
 \arguments{
 \item{lang}{A character string or a vector of character strings with
@@ -15,6 +16,10 @@ Void string can be passed to \code{lang} argument.}
 \item{all_precode}{A logical scalar. If \code{TRUE}, a "klippy" is
 added to all \code{HTML <pre>} elements having an \code{HTML <code>}
 element as a child.}
+
+\item{position}{A character vector with \code{klippy} position.
+Accepted values are "top", "bottom", "left" and "right".
+Abbreviated forms are allowed.}
 }
 \value{
 An HTML tag object that can be rendered as HTML using
