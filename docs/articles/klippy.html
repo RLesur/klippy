@@ -84,7 +84,7 @@
       <h1>Insert copy to clipboard buttons in RMarkdown HTML documents</h1>
                         <h4 class="author">Romain Lesur</h4>
             
-            <h4 class="date">2018-02-20</h4>
+            <h4 class="date">2018-02-21</h4>
           </div>
 
     
@@ -105,8 +105,8 @@
 <div id="code-block-selection" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-block-selection" class="anchor"></a>Code block selection</h2>
-<p>You can select which of the code blocks get a klippy.</p>
-<p>First, insert this chunk anywhere in your <code>Rmd</code> file:</p>
+<p>You can select which of the code blocks get a klippy.<br>
+First, insert this chunk anywhere in your <code>Rmd</code> file:</p>
 <div class="sourceCode" id="code-block-ex"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown"><a class="sourceLine" id="code-block-ex-1" data-line-number="1">```{r klippy, echo=FALSE, include=TRUE}</a>
 <a class="sourceLine" id="code-block-ex-2" data-line-number="2">klippy::klippy('')</a>
 <a class="sourceLine" id="code-block-ex-3" data-line-number="3">```</a></code></pre></div>
@@ -121,8 +121,32 @@
 <p>If you use other languages than <code>R</code> in your <code>Rmd</code> file, you can also add klippies to these code blocks.</p>
 <p>For example, if you want to add klippies to <code>R</code> and <code>python</code> code blocks, add this chunk anywhere in your <code>Rmd</code> file:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown"><a class="sourceLine" id="cb2-1" data-line-number="1">```{r klippy, echo=FALSE, include=TRUE}</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">klippy::klippy('r python')</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">klippy::klippy(c('r', 'python'))</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">```</a></code></pre></div>
+</div>
+<div id="icon-positioning" class="section level2">
+<h2 class="hasAnchor">
+<a href="#icon-positioning" class="anchor"></a>Icon positioning</h2>
+<p>By default, <code>klippy</code> is positionned at the upper-left corner of the code chunks. You can choose another corner with <code>position</code> argument:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown"><a class="sourceLine" id="cb3-1" data-line-number="1">```{r klippy, echo=FALSE, include=TRUE}</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">klippy::klippy(position = c('top', 'right'))</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">```</a></code></pre></div>
+</div>
+<div id="color-customization" class="section level2">
+<h2 class="hasAnchor">
+<a href="#color-customization" class="anchor"></a>Color customization</h2>
+<p><code>klippy</code> color is the same as the links in the document. However, you can pick another color:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown"><a class="sourceLine" id="cb4-1" data-line-number="1">```{r klippy, echo=FALSE, include=TRUE}</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">klippy::klippy(color = 'darkred')</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">```</a></code></pre></div>
+</div>
+<div id="tooltip-messages" class="section level2">
+<h2 class="hasAnchor">
+<a href="#tooltip-messages" class="anchor"></a>Tooltip messages</h2>
+<p>Tooltip messages can also be adapted:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown klippy"><code class="sourceCode markdown"><a class="sourceLine" id="cb5-1" data-line-number="1">```{r klippy, echo=FALSE, include=TRUE}</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">klippy::klippy(tooltip_message = 'Click to copy', tooltip_success = 'Done')</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">```</a></code></pre></div>
 </div>
 <div id="browser-support" class="section level2">
 <h2 class="hasAnchor">
@@ -146,6 +170,9 @@
 <li><a href="#common-use">Common use</a></li>
       <li><a href="#code-block-selection">Code block selection</a></li>
       <li><a href="#engine-selection">Engine selection</a></li>
+      <li><a href="#icon-positioning">Icon positioning</a></li>
+      <li><a href="#color-customization">Color customization</a></li>
+      <li><a href="#tooltip-messages">Tooltip messages</a></li>
       <li><a href="#browser-support">Browser Support</a></li>
       </ul>
 </div>
