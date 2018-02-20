@@ -35,8 +35,7 @@ The `klippy()` function inserts a klippy[^1] in each `R` or `markdown` code bloc
 
 ## Code block selection
 
-You can select which of the code blocks get a klippy.
-
+You can select which of the code blocks get a klippy.  
 First, insert this chunk anywhere in your `Rmd` file:
 
 ````{#code-block-ex .markdown .klippy}
@@ -62,7 +61,36 @@ For example, if you want to add klippies to `R` and `python` code blocks, add th
 chunk anywhere in your `Rmd` file:
 ````{.markdown .klippy}
 `r ''````{r klippy, echo=FALSE, include=TRUE}
-klippy::klippy('r python')
+klippy::klippy(c('r', 'python'))
+```
+````
+
+## Icon positioning
+
+By default, `klippy` is positionned at the upper-left corner of the code chunks.
+You can choose another corner with `position` argument:
+````{.markdown .klippy}
+`r ''````{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(position = c('top', 'right'))
+```
+````
+
+## Color customization
+
+`klippy` color is the same as the links in the document. However, you can pick 
+another color:
+````{.markdown .klippy}
+`r ''````{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(color = 'darkred')
+```
+````
+
+## Tooltip messages
+
+Tooltip messages can also be adapted:
+````{.markdown .klippy}
+`r ''````{r klippy, echo=FALSE, include=TRUE}
+klippy::klippy(tooltip_message = 'Click to copy', tooltip_success = 'Done')
 ```
 ````
 
