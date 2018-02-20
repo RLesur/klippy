@@ -5,7 +5,8 @@
 \title{Insert copy to clipboard buttons in HTML documents}
 \usage{
 klippy(lang = "r markdown", all_precode = FALSE, position = c("top",
-  "left"), color = "auto")
+  "left"), color = "auto", tooltip_message = "Copy code",
+  tooltip_message_succeed = "Copied!")
 }
 \arguments{
 \item{lang}{A character string or a vector of character strings with

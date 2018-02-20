@@ -39,10 +39,10 @@ function getUriOcticonClippy(klippyColor, klippyOpacity) {
   return uriImage;
 }
 
-function initKlippy(handSide, headSide, klippyColor, klippyOpacity) {
+function initKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel, tooltipLabelSucceed) {
   document.addEventListener("DOMContentLoaded", function() {
     var image = getUriOcticonClippy(klippyColor, klippyOpacity);
-    var klippyButton = "<button type='button' class='btn-klippy tooltipped tooltipped-no-delay' aria-label='Copy to clipboard' onfocusout='changeTooltipMessage(this,&quot;Copy to clipboard&quot;)' data-clipboard-klippy><div><img class='octicon' src='"+image+"' alt='Copy'></div></button>";
+    var klippyButton = "<button type='button' class='btn-klippy tooltipped tooltipped-no-delay' aria-label='" + tooltipLabel + "' onfocusout='changeTooltipMessage(this,&quot;" + tooltipLabel + "&quot;)' data-clipboard-klippy><div><img class='octicon' src='"+image+"' alt='Copy'></div></button>";
 
     // Insert klippy buttons:
     var codeNodeList = document.querySelectorAll(".klippy > code");
@@ -83,7 +83,7 @@ function initKlippy(handSide, headSide, klippyColor, klippyOpacity) {
     });
 
     clipboardKlippies.on('success', function(e) {
-      changeTooltipMessage(e.trigger, 'Copied!');
+      changeTooltipMessage(e.trigger, tooltipLabelSucceed);
       e.clearSelection();
     });
 
@@ -93,6 +93,6 @@ function initKlippy(handSide, headSide, klippyColor, klippyOpacity) {
   });
 }
 
-function addKlippy(handSide, headSide, klippyColor, klippyOpacity) {
-  if(Clipboard.isSupported()) initKlippy(handSide, headSide, klippyColor, klippyOpacity);
+function addKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel, tooltipLabelSucceed) {
+  if(Clipboard.isSupported()) initKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel, tooltipLabelSucceed);
 }

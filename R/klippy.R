@@ -53,7 +53,7 @@ html_dependency_klippy <- function() {
     name = 'klippy',
     version = '0.0.0.9500',
     src = 'htmldependencies/lib/klippy-0.0.0.9500',
-    script = 'js/klippy.min.js',
+    script = 'js/klippy.js',
     stylesheet = 'css/klippy.min.css',
     package = 'klippy',
     all_files = FALSE
@@ -123,7 +123,9 @@ klippy_dependencies <- function() {
 klippy <- function(lang = "r markdown",
                    all_precode = FALSE,
                    position = c("top", "left"),
-                   color = "auto") {
+                   color = "auto",
+                   tooltip_message = "Copy code",
+                   tooltip_message_succeed = "Copied!") {
 
   #' @param lang A character string or a vector of character strings with
   #'     language names. If a character string contains multiple languages
@@ -203,7 +205,7 @@ klippy <- function(lang = "r markdown",
 
   # Add a klippy button to all elements with klippy class attribute:
   js_script <- paste(js_script,
-                     sprintf("  addKlippy('%s', '%s', '%s', '%s');\n", handside, headside, color, alpha),
+                     sprintf("  addKlippy('%s', '%s', '%s', '%s', '%s', '%s');\n", handside, headside, color, alpha, tooltip_message, tooltip_message_succeed),
                      sep = '\n')
 
   #' @return An HTML tag object that can be rendered as HTML using
