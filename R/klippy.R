@@ -169,12 +169,17 @@ klippy <- function(lang = "r markdown",
   #'     \code{\link[grDevices]{colors}()}), a hexadecimal string of the form
   #'     \code{"#rrggbb"} or \code{"#rrggbbaa"}
   #'     (see \code{\link[grDevices]{rgb}()}), or a positive integer \code{i}
-  #'     meaning \code{\link[grDevices]{palette}()[i]}.
+  #'     meaning \code{\link[grDevices]{palette}()[i]}. Default value is
+  #'     \code{"auto"}: color is set to the anchor color of the document.
   assertthat::assert_that(
     assertthat::is.scalar(color)
   )
-  if (color != "auto")
+  if (color == "auto") {
+    alpha <- 1
+  } else {
+    alpha <- get_color_opacity(color)
     color <- get_rgba_color(color)
+  }
 
   # Build JS script
   # Initialization:
@@ -198,7 +203,7 @@ klippy <- function(lang = "r markdown",
 
   # Add a klippy button to all elements with klippy class attribute:
   js_script <- paste(js_script,
-                     sprintf("  addKlippy('%s', '%s');\n", handside, headside),
+                     sprintf("  addKlippy('%s', '%s', '%s', '%s');\n", handside, headside, color, alpha),
                      sep = '\n')
 
   #' @return An HTML tag object that can be rendered as HTML using
@@ -212,6 +217,11 @@ klippy <- function(lang = "r markdown",
 
 #' @importFrom grDevices col2rgb rgb
 get_rgba_color <- function(col) {
-  col <- as.data.frame(t(grDevices::col2rgb(col, alpha = TRUE)))
-  with(col, grDevices::rgb(red, green, blue, alpha, maxColorValue = 255))
+  col <- as.data.frame(t(grDevices::col2rgb(col)))
+  with(col, grDevices::rgb(red, green, blue, maxColorValue = 255))
+}
+
+get_color_opacity <- function(col) {
+  col <- as.data.frame(t(grDevices::col2rgb(col, alpha = TRUE)/255))
+  col$alpha
 }

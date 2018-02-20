@@ -26,7 +26,8 @@ specifications, i.e., either a color name (as listed by
 \code{\link[grDevices]{colors}()}), a hexadecimal string of the form
 \code{"#rrggbb"} or \code{"#rrggbbaa"}
 (see \code{\link[grDevices]{rgb}()}), or a positive integer \code{i}
-meaning \code{\link[grDevices]{palette}()[i]}.}
+meaning \code{\link[grDevices]{palette}()[i]}. Default value is
+\code{"auto"}: color is set to the anchor color of the document.}
 }
 \value{
 An HTML tag object that can be rendered as HTML using
