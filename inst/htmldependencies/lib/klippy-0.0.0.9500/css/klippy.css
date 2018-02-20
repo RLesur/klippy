@@ -5,8 +5,6 @@
 
 .btn-klippy {
   position: absolute;
-  left: 0;
-  top: 0;
   border: 0;
   padding: 1px 0 0 1px;
   background-color: transparent;
@@ -19,8 +17,8 @@
 
 .btn-klippy .octicon {
   display: inline-block;
-  vertical-align: top;
   margin: 0;
+  padding: 0;
 }
 
 .btn-klippy:focus {
