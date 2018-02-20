@@ -2,7 +2,8 @@
 #' @importFrom htmltools htmlDependency
 #' @importFrom htmltools tags
 #' @importFrom htmltools attachDependencies
-#' @importFrom stringi stri_extract_all_words
+#' @importFrom stringi stri_extract_all_words stri_detect_charclass
+#' @importFrom grDevices col2rgb rgb
 NULL
 
 #' Provide HTML dependencies
@@ -70,10 +71,10 @@ html_dependency_klippy <- function() {
 #' @family HTML dependencies functions
 #' @export
 klippy_dependencies <- function() {
-  return(list(html_dependency_clipboard(),
-              html_dependency_primer_tooltips(),
-              html_dependency_klippy()
-  ))
+  list(html_dependency_clipboard(),
+       html_dependency_primer_tooltips(),
+       html_dependency_klippy()
+  )
 }
 
 #' Insert copy to clipboard buttons in HTML documents
@@ -120,10 +121,12 @@ klippy_dependencies <- function() {
 #'
 #'
 #' @export
-klippy <- function(lang = "r markdown",
+klippy <- function(lang = c("r", "markdown"),
                    all_precode = FALSE,
                    position = c("top", "left"),
-                   color = "auto") {
+                   color = "auto",
+                   tooltip_message = "Copy code",
+                   tooltip_success = "Copied!") {
 
   #' @param lang A character string or a vector of character strings with
   #'     language names. If a character string contains multiple languages
@@ -164,7 +167,7 @@ klippy <- function(lang = "r markdown",
     headside <- "top"
   }
 
-  #' @param color string of any of the three kinds of \code{R} color
+  #' @param color String of any of the three kinds of \code{R} color
   #'     specifications, i.e., either a color name (as listed by
   #'     \code{\link[grDevices]{colors}()}), a hexadecimal string of the form
   #'     \code{"#rrggbb"} or \code{"#rrggbbaa"}
@@ -178,8 +181,21 @@ klippy <- function(lang = "r markdown",
     alpha <- 1
   } else {
     alpha <- get_color_opacity(color)
-    color <- get_rgba_color(color)
+    color <- get_rgb_color(color)
   }
+
+  #' @param tooltip_message String with the tooltip message.
+  assertthat::assert_that(
+    assertthat::is.string(tooltip_message),
+    !stringi::stri_detect_charclass(tooltip_message, "[\\p{C}]")
+  )
+
+  #' @param tooltip_success String with the tooltip message shown when
+  #'     code is successfully copied.
+  assertthat::assert_that(
+    assertthat::is.string(tooltip_success),
+    !stringi::stri_detect_charclass(tooltip_success, "[\\p{C}]")
+  )
 
   # Build JS script
   # Initialization:
@@ -202,9 +218,14 @@ klippy <- function(lang = "r markdown",
   }
 
   # Add a klippy button to all elements with klippy class attribute:
-  js_script <- paste(js_script,
-                     sprintf("  addKlippy('%s', '%s', '%s', '%s');\n", handside, headside, color, alpha),
-                     sep = '\n')
+  js_script <- paste(
+    js_script,
+    sprintf(
+      "  addKlippy('%s', '%s', '%s', '%s', '%s', '%s');\n",
+      handside, headside, color, alpha, tooltip_message, tooltip_success
+    ),
+    sep = '\n'
+  )
 
   #' @return An HTML tag object that can be rendered as HTML using
   #' \code{\link{as.character}()}.
@@ -215,8 +236,7 @@ klippy <- function(lang = "r markdown",
   )
 }
 
-#' @importFrom grDevices col2rgb rgb
-get_rgba_color <- function(col) {
+get_rgb_color <- function(col) {
   col <- as.data.frame(t(grDevices::col2rgb(col)))
   with(col, grDevices::rgb(red, green, blue, maxColorValue = 255))
 }

@@ -1,30 +1,32 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-klippy: Copy to Clipboard Buttons for R Markdown HTML Documents
-===============================================================
 
-**klippy** enhances R Markdown HTML documents with **"copy to clipboard" buttons** as shown below:
+# klippy: Copy to Clipboard Buttons for R Markdown HTML Documents
+
+**klippy** enhances R Markdown HTML documents with **“copy to clipboard”
+buttons** as shown below:
 
 ![](./inst/README_files/img/klippy.png)
 
-Installation
-------------
+## Installation
 
-`klippy` is not available from CRAN, but you can install the development version from GitHub with:
+`klippy` is not available from CRAN, but you can install the development
+version from GitHub with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("RLesur/klippy")
 ```
 
-Motivation
-----------
+## Motivation
 
-As an intensive reader of R Markdown books and documents (thanks to `knitr`), I selected on my screen dozens of R code blocks then press `Ctrl+C`...
-This package is a very small, but I hope helpful add-in for R Markdown to improve the reader experience.
+As an intensive reader of R Markdown books and documents (thanks to
+`knitr`), I selected on my screen dozens of R code blocks then press
+`Ctrl+C`…  
+This package is a very small, but I hope helpful add-in for R Markdown
+to improve the reader experience.
 
-Usage
------
+## Usage
 
 Add the following chunk anywhere in your `Rmd` file:
 
@@ -34,24 +36,25 @@ klippy::klippy()
 ```
 ````
 
-Browser Support
----------------
+## Browser Support
 
-The `klippy` package uses `clipboard.js`. Tooltips are rendered with `Primer Tooltips` `CSS`.
-Glue code is in Vanilla JS. For supported browsers, see [`clipboard.js` documentation](https://clipboardjs.com/#browser-support).
+The `klippy` package uses `clipboard.js`. Tooltips are rendered with
+`Primer Tooltips` `CSS`.  
+Glue code is in Vanilla JS. For supported browsers, see [`clipboard.js`
+documentation](https://clipboardjs.com/#browser-support).
 
-Bugs/Feature requests
----------------------
+## Bugs/Feature requests
 
-If you have any, [let me know](https://github.com/RLesur/klippy/issues). Thanks!
+If you have any, [let me know](https://github.com/RLesur/klippy/issues).
+Thanks\!
 
-Related project
----------------
+## Related project
 
-To use `clipboard.js` in Shiny, see `rclipboard` ([CRAN](https://cran.r-project.org/package=rclipboard), [GitHub](https://github.com/sbihorel/rclipboard)).
+To use `clipboard.js` in Shiny, see `rclipboard`
+([CRAN](https://cran.r-project.org/package=rclipboard),
+[GitHub](https://github.com/sbihorel/rclipboard)).
 
-Credits
--------
+## Credits
 
 The following libraries are distributed with `klippy`:
 
@@ -65,7 +68,8 @@ GitHub: <https://github.com/zenorocha/clipboard.js/>
 
 **Primer Tooltips** (version: 1.4.0) (c) GitHub, Inc.
 
-MIT license: <https://github.com/primer/primer-css/blob/v9.5.0/modules/primer-tooltips/LICENSE>
+MIT license:
+<https://github.com/primer/primer-css/blob/v9.5.0/modules/primer-tooltips/LICENSE>
 
 Website: <http://primercss.io/>
 

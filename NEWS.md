@@ -1,18 +1,22 @@
-# klippy 0.0.0.9500 (unreleased)
+## klippy 0.0.0.9500 (unreleased)
 
-## NEW FEATURES
+### NEW FEATURES
 
-* `klippy` position can be modified.
+* `klippy` tooltip messages can be customized. New default message.
 
-## BUG FIX
+* `klippy` color can be customized (#13).
+
+* `klippy` position can be modified (#10).
+
+### BUG FIX
 
 * `klippy` now renders well with [Hugo Academic](https://github.com/gcushen/hugo-academic) (thanks to [Emerson M. Del Ponte](https://github.com/emdelponte), #8).
 
-# klippy 0.0.0.9400 (pre-release)
+## klippy 0.0.0.9400 (pre-release)
 
 * klippies are colored
 
-# klippy 0.0.0.9300 (pre-release)
+## klippy 0.0.0.9300 (pre-release)
 
 * tooltips are rendered with Primer Tooltips instead of Bootstrap Tooltips (removes Bootstrap dependency).
 
@@ -20,7 +24,7 @@
 
 * creates `klippy_dependencies` function.
 
-# klippy 0.0.0.9201 (pre-release)
+## klippy 0.0.0.9201 (pre-release)
 
 * `klippies` are auto-sized. Argument `size` is removed.
 
@@ -28,7 +32,7 @@
 
 * Remove the distribution of `jQuery` and `Bootstrap`: calls to `rmarkdown::html_dependency_*` are preferred.
 
-# klippy 0.0.0.9100 (pre-release)
+## klippy 0.0.0.9100 (pre-release)
 
 * `klippy` moved to upper left corners of code blocks (thx @ [Elin Waring](https://twitter.com/elinwaring)  for the suggestion)
 
@@ -36,6 +40,6 @@
 
 * Documentation provides a more comprehensive example
 
-# klippy 0.0.0.9000 (pre-release)
+## klippy 0.0.0.9000 (pre-release)
 
 * Initial release. See [README.md](./README.md), vignette and documentation.

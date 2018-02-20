@@ -117,8 +117,9 @@ are inserted in the upper left corner of the code chunks. <code>klippy()</code>
 function is suited for a call in a <code>knitr</code> code chunk.</p>
     
 
-    <pre class="usage"><span class='fu'>klippy</span>(<span class='kw'>lang</span> <span class='kw'>=</span> <span class='st'>"r markdown"</span>, <span class='kw'>all_precode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>position</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"top"</span>,
-  <span class='st'>"left"</span>))</pre>
+    <pre class="usage"><span class='fu'>klippy</span>(<span class='kw'>lang</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"r"</span>, <span class='st'>"markdown"</span>), <span class='kw'>all_precode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>position</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"top"</span>,
+  <span class='st'>"left"</span>), <span class='kw'>color</span> <span class='kw'>=</span> <span class='st'>"auto"</span>, <span class='kw'>tooltip_message</span> <span class='kw'>=</span> <span class='st'>"Copy code"</span>,
+  <span class='kw'>tooltip_success</span> <span class='kw'>=</span> <span class='st'>"Copied!"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
@@ -141,6 +142,25 @@ element as a child.</p></td>
       <td><p>A character vector with <code>klippy</code> position.
 Accepted values are "top", "bottom", "left" and "right".
 Abbreviated forms are allowed.</p></td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td><p>String of any of the three kinds of <code>R</code> color
+specifications, i.e., either a color name (as listed by
+<code><a href='http://www.rdocumentation.org/packages/grDevices/topics/colors'>colors</a>()</code>), a hexadecimal string of the form
+<code>"#rrggbb"</code> or <code>"#rrggbbaa"</code>
+(see <code><a href='http://www.rdocumentation.org/packages/grDevices/topics/rgb'>rgb</a>()</code>), or a positive integer <code>i</code>
+meaning <code><a href='http://www.rdocumentation.org/packages/grDevices/topics/palette'>palette</a>()[i]</code>. Default value is
+<code>"auto"</code>: color is set to the anchor color of the document.</p></td>
+    </tr>
+    <tr>
+      <th>tooltip_message</th>
+      <td><p>String with the tooltip message.</p></td>
+    </tr>
+    <tr>
+      <th>tooltip_success</th>
+      <td><p>String with the tooltip message shown when
+code is successfully copied.</p></td>
     </tr>
     </table>
     

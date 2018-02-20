@@ -4,8 +4,9 @@
 \alias{klippy}
 \title{Insert copy to clipboard buttons in HTML documents}
 \usage{
-klippy(lang = "r markdown", all_precode = FALSE, position = c("top",
-  "left"), color = "auto")
+klippy(lang = c("r", "markdown"), all_precode = FALSE, position = c("top",
+  "left"), color = "auto", tooltip_message = "Copy code",
+  tooltip_success = "Copied!")
 }
 \arguments{
 \item{lang}{A character string or a vector of character strings with
@@ -21,13 +22,18 @@ element as a child.}
 Accepted values are "top", "bottom", "left" and "right".
 Abbreviated forms are allowed.}
 
-\item{color}{string of any of the three kinds of \code{R} color
+\item{color}{String of any of the three kinds of \code{R} color
 specifications, i.e., either a color name (as listed by
 \code{\link[grDevices]{colors}()}), a hexadecimal string of the form
 \code{"#rrggbb"} or \code{"#rrggbbaa"}
 (see \code{\link[grDevices]{rgb}()}), or a positive integer \code{i}
 meaning \code{\link[grDevices]{palette}()[i]}. Default value is
 \code{"auto"}: color is set to the anchor color of the document.}
+
+\item{tooltip_message}{String with the tooltip message.}
+
+\item{tooltip_success}{String with the tooltip message shown when
+code is successfully copied.}
 }
 \value{
 An HTML tag object that can be rendered as HTML using
