@@ -20,7 +20,7 @@ function changeTooltipMessage(element, msg) {
   element.setAttribute('aria-label', msg);
 }
 
-function getUriOcticonClippy() {
+function getIconSVG() {
   // The following SVG image is Octicons Clippy (version 6.0.1) (c) GitHub, Inc. - MIT License
   // MIT license: https://github.com/primer/octicons/blob/v6.0.1/LICENSE
   // Website: https://octicons.github.com/
@@ -38,7 +38,7 @@ function getAnchorColor() {
 
 function initKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel, tooltipLabelSucceed) {
   document.addEventListener("DOMContentLoaded", function() {
-    var image = getUriOcticonClippy();
+    var image = getIconSVG();
     var klippyButton = "<button type='button' class='btn-klippy tooltipped tooltipped-no-delay' aria-label='" + tooltipLabel + "' onfocusout='changeTooltipMessage(this,&quot;" + tooltipLabel + "&quot;)' data-clipboard-klippy>"+ image +"</button>";
 
     // Process icons color:
@@ -58,7 +58,7 @@ function initKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel
     // Auto-size:
     var klippiesCollection = document.getElementsByClassName("btn-klippy");
 
-    function autoSize(klippy) {
+    function formatKlippy(klippy) {
       var klippyParent = klippy.parentElement;
       var paddingParent = window.getComputedStyle(klippyParent).getPropertyValue('padding-' + handSide);
       var icon = klippy.querySelector('.octicon');
@@ -83,7 +83,7 @@ function initKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel
       }
     }
 
-    Array.prototype.map.call(klippiesCollection, autoSize);
+    Array.prototype.map.call(klippiesCollection, formatKlippy);
 
     // Initialize clipboard:
     var clipboardKlippies=new Clipboard('[data-clipboard-klippy]',{
