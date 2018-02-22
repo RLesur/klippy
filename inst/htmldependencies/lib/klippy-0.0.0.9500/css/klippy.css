@@ -15,7 +15,7 @@
   padding: 0;
 }
 
-.btn-klippy .octicon {
+.btn-klippy .klippy-icon {
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -25,7 +25,7 @@
   outline: 0;
 }
 
-.btn-klippy:focus .octicon {
+.btn-klippy:focus .klippy-icon {
   border-width: thin;
   border-style: dotted;
   border-color: gray;

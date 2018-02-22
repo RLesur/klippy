@@ -77,13 +77,33 @@ klippy::klippy(position = c('top', 'right'))
 
 ## Color customization
 
-`klippy` color is the same as the links in the document. However, you can pick 
-another color:
+### Color initialization
+
+`klippy` default color is the same as the links in the document. However, you 
+can initialize it with another color:
 ````{.markdown .klippy}
 `r ''````{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy(color = 'darkred')
 ```
 ````
+
+```{css, echo=FALSE}
+#modify-color-with-css .klippy-icon {
+  fill: darkred;
+  opacity: 0.3;
+}
+```
+
+### Modify color with CSS
+
+Color customization is also possible with `CSS` rules:
+
+```{.css .klippy}
+#modify-color-with-css .klippy-icon {
+  fill: darkred;
+  opacity: 0.3;
+}
+```
 
 ## Tooltip messages
 
