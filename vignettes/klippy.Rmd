@@ -96,7 +96,7 @@ klippy::klippy(color = 'darkred')
 
 ### Modify color with CSS
 
-Color customization is also possible with `CSS` rules:
+Color customization is also feasible with `CSS` rules:
 
 ```{.css .klippy}
 #modify-color-with-css .klippy-icon {
