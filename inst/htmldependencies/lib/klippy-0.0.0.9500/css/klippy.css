@@ -10,11 +10,6 @@
   background-color: transparent;
 }
 
-.btn-klippy > div {
-  margin: 0;
-  padding: 0;
-}
-
 .btn-klippy .klippy-icon {
   display: inline-block;
   margin: 0;
