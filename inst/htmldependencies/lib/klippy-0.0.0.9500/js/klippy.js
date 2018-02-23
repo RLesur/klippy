@@ -36,6 +36,21 @@ function getAnchorColor() {
   return color;
 }
 
+function getAlpha(color) {
+  if (typeof color == 'string') {
+    if (color.indexOf('rgba(') === 0) {
+      alphaBegin = color.lastIndexOf(',') + 2;
+      alphaEnd = color.indexOf(')');
+      alpha = color.substring(alphaBegin, alphaEnd);
+      return alpha;
+    } else {
+      return '1';
+    }
+  } else {
+    return '1';
+  }
+}
+
 function initKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel, tooltipLabelSucceed) {
   document.addEventListener("DOMContentLoaded", function() {
     var image = getIconSVG();
@@ -43,10 +58,13 @@ function initKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel
 
     // Process icons color:
     var color;
+    var opacity;
     if (klippyColor === 'auto') {
       color = getAnchorColor();
+      opacity = getAlpha(color);
     } else {
       color = klippyColor;
+      opacity = klippyOpacity;
     }
 
     // Insert klippy buttons:
@@ -67,7 +85,7 @@ function initKlippy(handSide, headSide, klippyColor, klippyOpacity, tooltipLabel
       icon.setAttribute('width', paddingParent);
       icon.setAttribute('height', iconHeight);
       icon.setAttribute('fill', color);
-      icon.setAttribute('opacity', klippyOpacity);
+      icon.setAttribute('opacity', opacity);
       icon.style.verticalAlign = headSide;
       if (handSide === 'right') {
         klippy.style.right = '0';
