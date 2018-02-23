@@ -4,7 +4,7 @@
 
 * `klippy` tooltip messages can be customized. New default message.
 
-* `klippy` color can be customized (#13).
+* `klippy` initial color can be customized (#13). Further customization is allowed through `CSS`.
 
 * `klippy` position can be modified (#10).
 
