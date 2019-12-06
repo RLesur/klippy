@@ -11,6 +11,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # klippy<br />Copy to Clipboard Buttons for R Markdown HTML Documents<a href="https://rlesur.github.io/klippy"><img src="man/figures/logo.png" align="right" height="138.5" /></a>
 
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/RLesur/klippy.svg?branch=master)](https://travis-ci.org/RLesur/klippy)
+<!-- badges: end -->
+
 ## Overview
 
 **klippy** enhances R Markdown HTML documents with **"copy to clipboard" buttons** as shown below:
