@@ -15,11 +15,11 @@ html_dependency_klippy()
 }
 \value{
 An object that can be included in a list of dependencies passed to
-\code{\link[htmltools]{attachDependencies}}.
+\code{\link[htmltools:attachDependencies]{htmltools::attachDependencies()}}.
 }
 \description{
 These functions provide HTML dependencies for \code{clipboard.js},
-\code{klippy} and \code{Primer Tooltips CSS} for re-use.
+\code{klippy} and \verb{Primer Tooltips CSS} for re-use.
 }
 \seealso{
 Other HTML dependencies functions: 

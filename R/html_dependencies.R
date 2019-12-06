@@ -1,10 +1,10 @@
 #' Provide HTML dependencies
 #'
-#' These functions provide HTML dependencies for \code{clipboard.js},
-#' \code{klippy} and \code{Primer Tooltips CSS} for re-use.
+#' These functions provide HTML dependencies for `clipboard.js`,
+#' `klippy` and `Primer Tooltips CSS` for re-use.
 #' @name html_dependencies
 #' @return An object that can be included in a list of dependencies passed to
-#' \code{\link[htmltools]{attachDependencies}}.
+#' [htmltools::attachDependencies()].
 #' @family HTML dependencies functions
 NULL
 
@@ -55,11 +55,11 @@ html_dependency_klippy <- function() {
 
 #' List klippy dependencies
 #'
-#' This function is used to get the list of \code{klippy} dependencies.
+#' This function is used to get the list of `klippy` dependencies.
 #'
 #' @return A list of dependencies that can be passed to
-#' \code{\link[htmltools]{attachDependencies}} or
-#' \code{\link[rmarkdown]{html_document_base}}.
+#' [htmltools::attachDependencies()] or
+#' [rmarkdown::html_document_base()].
 #' @family HTML dependencies functions
 #' @export
 klippy_dependencies <- function() {

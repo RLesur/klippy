@@ -8,24 +8,24 @@ NULL
 
 #' Insert copy to clipboard buttons in HTML documents
 #'
-#' \code{klippy} insert copy to clipboard buttons (or "klippies") in \code{R}
-#' \code{Markdown} \code{HTML} documents. In the rendered document, "klippies"
-#' are inserted in the upper left corner of the code chunks. \code{klippy()}
-#' function is suited for a call in a \code{knitr} code chunk.
+#' `klippy` insert copy to clipboard buttons (or "klippies") in `R`
+#' `Markdown` `HTML` documents. In the rendered document, "klippies"
+#' are inserted in the upper left corner of the code chunks. `klippy()`
+#' function is suited for a call in a `knitr` code chunk.
 #'
-#' \code{klippy()} function appends \code{JavaScript} functions and \code{CSS} in
+#' `klippy()` function appends `JavaScript` functions and `CSS` in
 #' the rendered document that:
 #' \enumerate{
-#' \item Add \code{klippy} to the class attribute of selected \code{<pre>}
+#' \item Add `klippy` to the class attribute of selected `<pre>`
 #' elements.
-#' \item Add a \code{<button>} element (a "klippy") as a child for all
-#' \code{<pre>} elements with a \code{klippy} class attribute.
-#' \item Instantiate \code{clipboard.js} event listeners and attach them to
-#' \code{klippies}.}
-#' \code{klippy} class can also be appended to a \code{<pre>} element using
-#' \href{https://yihui.name/knitr/options/}{\code{knitr class.source} chunk
-#' option}. "Klippy" buttons are not rendered if the browser does not support
-#' \code{clipboard.js} library (see \href{https://clipboardjs.com/}{here} for
+#' \item Add a `<button>` element (a "klippy") as a child for all
+#' `<pre>` elements with a `klippy` class attribute.
+#' \item Instantiate `clipboard.js` event listeners and attach them to
+#' `klippies`.}
+#' `klippy` class can also be appended to a `<pre>` element using
+#' [`knitr class.source` chunk
+#' option](https://yihui.name/knitr/options/). "Klippy" buttons are not rendered if the browser does not support
+#' `clipboard.js` library (see [here](https://clipboardjs.com/) for
 #' details).
 #'
 #' @examples
@@ -57,11 +57,11 @@ klippy <- function(lang = c("r", "markdown"),
   #' @param lang A character string or a vector of character strings with
   #'     language names. If a character string contains multiple languages
   #'     names, these names have to be separated by boundaries (e.g., spaces).
-  #'     Void string can be passed to \code{lang} argument.
+  #'     Void string can be passed to `lang` argument.
   assertthat::assert_that(is.character(lang))
 
-  #' @param all_precode A logical scalar. If \code{TRUE}, a "klippy" is
-  #'     added to all \code{HTML <pre>} elements having an \code{HTML <code>}
+  #' @param all_precode A logical scalar. If `TRUE`, a "klippy" is
+  #'     added to all `HTML <pre>` elements having an `HTML <code>`
   #'     element as a child.
   assertthat::assert_that(
     is.logical(all_precode),
@@ -69,7 +69,7 @@ klippy <- function(lang = c("r", "markdown"),
     assertthat::noNA(all_precode)
   )
 
-  #' @param position A character vector with \code{klippy} position.
+  #' @param position A character vector with `klippy` position.
   #'     Accepted values are "top", "bottom", "left" and "right".
   #'     Abbreviated forms are allowed.
   position <- match.arg(position, c("top", "left", "bottom", "right"), several.ok = TRUE)
@@ -93,13 +93,13 @@ klippy <- function(lang = c("r", "markdown"),
     headside <- "top"
   }
 
-  #' @param color String of any of the three kinds of \code{R} color
+  #' @param color String of any of the three kinds of `R` color
   #'     specifications, i.e., either a color name (as listed by
-  #'     \code{\link[grDevices]{colors}()}), a hexadecimal string of the form
-  #'     \code{"#rrggbb"} or \code{"#rrggbbaa"}
-  #'     (see \code{\link[grDevices]{rgb}()}), or a positive integer \code{i}
-  #'     meaning \code{\link[grDevices]{palette}()[i]}. Default value is
-  #'     \code{"auto"}: color is set to the anchor color of the document.
+  #'     [grDevices::colors()]), a hexadecimal string of the form
+  #'     `"#rrggbb"` or `"#rrggbbaa"`
+  #'     (see [grDevices::rgb()]), or a positive integer `i`
+  #'     meaning `[palette][grDevices::palette]()[i]`. Default value is
+  #'     `"auto"`: color is set to the anchor color of the document.
   assertthat::assert_that(
     assertthat::is.scalar(color)
   )
@@ -154,7 +154,7 @@ klippy <- function(lang = c("r", "markdown"),
   )
 
   #' @return An HTML tag object that can be rendered as HTML using
-  #' \code{\link{as.character}()}.
+  #' [as.character()].
   # Attach dependencies to JS script:
   htmltools::attachDependencies(
     htmltools::tags$script(js_script),

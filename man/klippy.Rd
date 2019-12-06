@@ -20,7 +20,7 @@ names, these names have to be separated by boundaries (e.g., spaces).
 Void string can be passed to \code{lang} argument.}
 
 \item{all_precode}{A logical scalar. If \code{TRUE}, a "klippy" is
-added to all \code{HTML <pre>} elements having an \code{HTML <code>}
+added to all \verb{HTML <pre>} elements having an \verb{HTML <code>}
 element as a child.}
 
 \item{position}{A character vector with \code{klippy} position.
@@ -29,10 +29,10 @@ Abbreviated forms are allowed.}
 
 \item{color}{String of any of the three kinds of \code{R} color
 specifications, i.e., either a color name (as listed by
-\code{\link[grDevices]{colors}()}), a hexadecimal string of the form
+\code{\link[grDevices:colors]{grDevices::colors()}}), a hexadecimal string of the form
 \code{"#rrggbb"} or \code{"#rrggbbaa"}
-(see \code{\link[grDevices]{rgb}()}), or a positive integer \code{i}
-meaning \code{\link[grDevices]{palette}()[i]}. Default value is
+(see \code{\link[grDevices:rgb]{grDevices::rgb()}}), or a positive integer \code{i}
+meaning \verb{[palette][grDevices::palette]()[i]}. Default value is
 \code{"auto"}: color is set to the anchor color of the document.}
 
 \item{tooltip_message}{String with the tooltip message.}
@@ -42,7 +42,7 @@ code is successfully copied.}
 }
 \value{
 An HTML tag object that can be rendered as HTML using
-\code{\link{as.character}()}.
+\code{\link[=as.character]{as.character()}}.
 }
 \description{
 \code{klippy} insert copy to clipboard buttons (or "klippies") in \code{R}
@@ -54,15 +54,14 @@ function is suited for a call in a \code{knitr} code chunk.
 \code{klippy()} function appends \code{JavaScript} functions and \code{CSS} in
 the rendered document that:
 \enumerate{
-\item Add \code{klippy} to the class attribute of selected \code{<pre>}
+\item Add \code{klippy} to the class attribute of selected \verb{<pre>}
 elements.
-\item Add a \code{<button>} element (a "klippy") as a child for all
-\code{<pre>} elements with a \code{klippy} class attribute.
+\item Add a \verb{<button>} element (a "klippy") as a child for all
+\verb{<pre>} elements with a \code{klippy} class attribute.
 \item Instantiate \code{clipboard.js} event listeners and attach them to
 \code{klippies}.}
-\code{klippy} class can also be appended to a \code{<pre>} element using
-\href{https://yihui.name/knitr/options/}{\code{knitr class.source} chunk
-option}. "Klippy" buttons are not rendered if the browser does not support
+\code{klippy} class can also be appended to a \verb{<pre>} element using
+\href{https://yihui.name/knitr/options/}{\verb{knitr class.source} chunk option}. "Klippy" buttons are not rendered if the browser does not support
 \code{clipboard.js} library (see \href{https://clipboardjs.com/}{here} for
 details).
 }

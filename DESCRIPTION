@@ -34,3 +34,4 @@ VignetteBuilder: knitr
 Collate: 
     'html_dependencies.R'
     'klippy.R'
+Roxygen: list(markdown = TRUE)
