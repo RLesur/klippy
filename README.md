@@ -46,9 +46,10 @@ klippy::klippy()
 
 ## Browser Support
 
-The `klippy` package uses `clipboard.js`. Tooltips are rendered with
-`Primer Tooltips` `CSS`.  
-Glue code is in Vanilla JS. For supported browsers, see [`clipboard.js`
+**klippy** uses [clipboard.js](https://clipboardjs.com/). Tooltips are
+rendered with [Primer Tooltips](https://primer.style/) CSS.  
+Glue code is in Vanilla JS.  
+For supported browsers, see [`clipboard.js`
 documentation](https://clipboardjs.com/#browser-support).
 
 ## Bugs/Feature requests
@@ -58,7 +59,7 @@ Thanks\!
 
 ## Related project
 
-To use `clipboard.js` in Shiny, see `rclipboard`
+To use `clipboard.js` in Shiny, see **rclipboard**
 ([CRAN](https://cran.r-project.org/package=rclipboard),
 [GitHub](https://github.com/sbihorel/rclipboard)).
 
@@ -67,14 +68,14 @@ To use `clipboard.js` in Shiny, see `rclipboard`
 The following libraries are distributed with `klippy`:
 
 **clipboard.js** (version: 1.7.1) (c) Zeno Rocha <hi@zenorocha.com>  
-MIT license: <http://zenorocha.mit-license.org/>  
+MIT license: <https://zenorocha.mit-license.org/>  
 Website: <https://clipboardjs.com/>  
 GitHub: <https://github.com/zenorocha/clipboard.js/>
 
 **Primer Tooltips** (version: 1.4.0) (c) GitHub, Inc.  
 MIT license:
 <https://github.com/primer/primer-css/blob/v9.5.0/modules/primer-tooltips/LICENSE>  
-Website: <http://primercss.io/>
+Website: <https://primer.style/>
 
 The clipboard icon `clippy.svg` is part of:  
 **GitHub Octicons** (version: 6.0.1) (c) GitHub, Inc.  
