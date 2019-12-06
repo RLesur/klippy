@@ -15,7 +15,7 @@ html_dependency_klippy()
 }
 \value{
 An object that can be included in a list of dependencies passed to
-\code{\link[htmltools:attachDependencies]{htmltools::attachDependencies()}}.
+\link[htmltools:htmlDependencies]{htmltools::attachDependencies()}.
 }
 \description{
 These functions provide HTML dependencies for \code{clipboard.js},

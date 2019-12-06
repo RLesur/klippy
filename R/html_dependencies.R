@@ -4,7 +4,7 @@
 #' `klippy` and `Primer Tooltips CSS` for re-use.
 #' @name html_dependencies
 #' @return An object that can be included in a list of dependencies passed to
-#' [htmltools::attachDependencies()].
+#' [htmltools::attachDependencies()][htmltools::htmlDependencies].
 #' @family HTML dependencies functions
 NULL
 
@@ -58,7 +58,7 @@ html_dependency_klippy <- function() {
 #' This function is used to get the list of `klippy` dependencies.
 #'
 #' @return A list of dependencies that can be passed to
-#' [htmltools::attachDependencies()] or
+#' [htmltools::attachDependencies()][htmltools::htmlDependencies] or
 #' [rmarkdown::html_document_base()].
 #' @family HTML dependencies functions
 #' @export

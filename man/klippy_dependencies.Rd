@@ -8,7 +8,7 @@ klippy_dependencies()
 }
 \value{
 A list of dependencies that can be passed to
-\code{\link[htmltools:attachDependencies]{htmltools::attachDependencies()}} or
+\link[htmltools:htmlDependencies]{htmltools::attachDependencies()} or
 \code{\link[rmarkdown:html_document_base]{rmarkdown::html_document_base()}}.
 }
 \description{
