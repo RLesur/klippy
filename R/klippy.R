@@ -115,10 +115,7 @@ klippy_dependencies <- function() {
 #'   tf[1]
 #' )
 #'
-#' \dontrun{
 #' rmarkdown::render(tf[1], "html_document", tf[2])
-#' browseURL(paste0("file://", tf[2]))}
-#'
 #'
 #' @export
 klippy <- function(lang = c("r", "markdown"),
