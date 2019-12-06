@@ -15,5 +15,7 @@ A list of dependencies that can be passed to
 This function is used to get the list of \code{klippy} dependencies.
 }
 \seealso{
-Other HTML dependencies functions: \code{\link{html-dependencies}}
+Other HTML dependencies functions: 
+\code{\link{html-dependencies}}
 }
+\concept{HTML dependencies functions}

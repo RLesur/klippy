@@ -5,3 +5,5 @@
 ^README\.Rmd$
 ^index\.md$
 ^pkgdown$
+^doc$
+^Meta$

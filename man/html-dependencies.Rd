@@ -22,5 +22,7 @@ These functions provide HTML dependencies for \code{clipboard.js},
 \code{klippy} and \code{Primer Tooltips CSS} for re-use.
 }
 \seealso{
-Other HTML dependencies functions: \code{\link{klippy_dependencies}}
+Other HTML dependencies functions: 
+\code{\link{klippy_dependencies}()}
 }
+\concept{HTML dependencies functions}

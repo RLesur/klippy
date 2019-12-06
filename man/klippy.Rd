@@ -4,9 +4,14 @@
 \alias{klippy}
 \title{Insert copy to clipboard buttons in HTML documents}
 \usage{
-klippy(lang = c("r", "markdown"), all_precode = FALSE, position = c("top",
-  "left"), color = "auto", tooltip_message = "Copy code",
-  tooltip_success = "Copied!")
+klippy(
+  lang = c("r", "markdown"),
+  all_precode = FALSE,
+  position = c("top", "left"),
+  color = "auto",
+  tooltip_message = "Copy code",
+  tooltip_success = "Copied!"
+)
 }
 \arguments{
 \item{lang}{A character string or a vector of character strings with
