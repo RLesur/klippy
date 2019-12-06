@@ -1,4 +1,4 @@
-# <img src="reference/figures/logo.png" alt="logo" style="float: right;" />klippy<br />Copy to Clipboard Buttons for R Markdown HTML Documents 
+# <img src="reference/figures/logo.png" alt="logo" style="float: right;height: 3.5em;" />klippy<br />Copy to Clipboard Buttons for R Markdown HTML Documents 
 
 **klippy** enhances R Markdown HTML documents with **“copy to clipboard”
 buttons** as shown below:
