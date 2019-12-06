@@ -1,12 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# <img src="man/figures/logo.png" alt="logo" style="float: right;" />klippy<br />Copy to Clipboard Buttons for R Markdown HTML Documents
+# klippy<img src="man/figures/logo.png" alt="logo" style="float: right;" /><br />Copy to Clipboard Buttons for R Markdown HTML Documents
 
 **klippy** enhances R Markdown HTML documents with **“copy to clipboard”
 buttons** as shown below:
 
-![](./man/figures/klippy.png)
+![](man/figures/klippy.png)
 
 ## Installation
 
