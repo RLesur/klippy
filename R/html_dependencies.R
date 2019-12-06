@@ -2,13 +2,13 @@
 #'
 #' These functions provide HTML dependencies for \code{clipboard.js},
 #' \code{klippy} and \code{Primer Tooltips CSS} for re-use.
-#' @name html-dependencies
+#' @name html_dependencies
 #' @return An object that can be included in a list of dependencies passed to
 #' \code{\link[htmltools]{attachDependencies}}.
 #' @family HTML dependencies functions
 NULL
 
-#' @rdname html-dependencies
+#' @rdname html_dependencies
 #' @export
 html_dependency_clipboard <- function() {
   htmltools::htmlDependency(
@@ -23,7 +23,7 @@ html_dependency_clipboard <- function() {
   )
 }
 
-#' @rdname html-dependencies
+#' @rdname html_dependencies
 #' @export
 html_dependency_primer_tooltips <- function() {
   htmltools::htmlDependency(
@@ -39,7 +39,7 @@ html_dependency_primer_tooltips <- function() {
   )
 }
 
-#' @rdname html-dependencies
+#' @rdname html_dependencies
 #' @export
 html_dependency_klippy <- function() {
   htmltools::htmlDependency(

@@ -16,6 +16,6 @@ This function is used to get the list of \code{klippy} dependencies.
 }
 \seealso{
 Other HTML dependencies functions: 
-\code{\link{html-dependencies}}
+\code{\link{html_dependencies}}
 }
 \concept{HTML dependencies functions}
