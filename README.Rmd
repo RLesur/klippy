@@ -9,19 +9,19 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# klippy: Copy to Clipboard Buttons for R Markdown HTML Documents
+# <img src="man/figures/logo.png" alt="logo" style="float: right;" />klippy<br />Copy to Clipboard Buttons for R Markdown HTML Documents
 
 **klippy** enhances R Markdown HTML documents with **"copy to clipboard" buttons** as shown below:
 
-![](./inst/README_files/img/klippy.png)
+![](./man/figures/klippy.png)
 
 ## Installation
 
 `klippy` is not available from CRAN, but you can install the development version from GitHub with:
 
 ```{r, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("RLesur/klippy")
+# install.packages("remotes")
+remotes::install_github("rlesur/klippy")
 ```
 
 ## Motivation

@@ -4,4 +4,3 @@ template:
   params:
     bootswatch: spacelab
     ganalytics: UA-107187723-1
-  path: "./pkgdown/custom_template/"

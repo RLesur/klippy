@@ -3,6 +3,5 @@
 ^docs$
 ^_pkgdown\.yaml$
 ^README\.Rmd$
-^index\.Rmd$
-^index\.html$
+^index\.md$
 ^pkgdown$

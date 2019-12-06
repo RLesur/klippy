@@ -1,6 +1,9 @@
+pandoc: 2.8.0.1
+pkgdown: 1.4.1
+pkgdown_sha: ~
+articles:
+  klippy: klippy.html
 urls:
   reference: http://rlesur.github.io/klippy/reference
   article: http://rlesur.github.io/klippy/articles
-articles:
-  klippy: klippy.html
 

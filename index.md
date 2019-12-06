@@ -1,12 +1,9 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# <img src="man/figures/logo.png" alt="logo" style="float: right;" />klippy<br />Copy to Clipboard Buttons for R Markdown HTML Documents
+# <img src="reference/figures/logo.png" alt="logo" style="float: right;" />klippy<br />Copy to Clipboard Buttons for R Markdown HTML Documents 
 
 **klippy** enhances R Markdown HTML documents with **“copy to clipboard”
 buttons** as shown below:
 
-![](./man/figures/klippy.png)
+![](reference/figures/klippy.png "example")
 
 ## Installation
 
@@ -30,7 +27,7 @@ to improve the reader experience.
 
 Add the following chunk anywhere in your `Rmd` file:
 
-```` markdown
+```` r
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```
@@ -38,8 +35,9 @@ klippy::klippy()
 
 ## Browser Support
 
-The `klippy` package uses `clipboard.js`. Tooltips are rendered with
-`Primer Tooltips` `CSS`.  
+The `klippy` package uses [clipboard.js](https://clipboardjs.com/). 
+Tooltips are rendered with
+[Primer Tooltips](http://primercss.io/).  
 Glue code is in Vanilla JS. For supported browsers, see [`clipboard.js`
 documentation](https://clipboardjs.com/#browser-support).
 
@@ -53,30 +51,3 @@ Thanks\!
 To use `clipboard.js` in Shiny, see `rclipboard`
 ([CRAN](https://cran.r-project.org/package=rclipboard),
 [GitHub](https://github.com/sbihorel/rclipboard)).
-
-## Credits
-
-The following libraries are distributed with `klippy`:
-
-**clipboard.js** (version: 1.7.1) (c) Zeno Rocha <hi@zenorocha.com>
-
-MIT license: <http://zenorocha.mit-license.org/>
-
-Website: <https://clipboardjs.com/>
-
-GitHub: <https://github.com/zenorocha/clipboard.js/>
-
-**Primer Tooltips** (version: 1.4.0) (c) GitHub, Inc.
-
-MIT license:
-<https://github.com/primer/primer-css/blob/v9.5.0/modules/primer-tooltips/LICENSE>
-
-Website: <http://primercss.io/>
-
-The clipboard icon `clippy.svg` is part of:
-
-**GitHub Octicons** (version: 6.0.1) (c) GitHub, Inc.
-
-MIT license: <https://github.com/primer/octicons/blob/v6.0.1/LICENSE>
-
-Website: <https://octicons.github.com/>
