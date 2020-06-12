@@ -47,7 +47,7 @@ NULL
 #' rmarkdown::render(tf[1], "html_document", tf[2])
 #'
 #' @export
-klippy <- function(lang = c("r", "markdown"),
+klippy <- function(lang = c("r", "markdown", "python", "bash", "sql", "Rcpp", "stan", "js", "css", "julia", "c", "fortran", "awk", "ruby", "haskell", "perl", "dot", "tikz", "sas", "coffee", "go"),
                    all_precode = FALSE,
                    position = c("top", "left"),
                    color = "auto",
