@@ -51,6 +51,7 @@ klippy <- function(lang = c("r", "markdown"),
                    all_precode = FALSE,
                    position = c("top", "left"),
                    color = "auto",
+                   size = NULL,
                    tooltip_message = "Copy code",
                    tooltip_success = "Copied!") {
 
@@ -153,11 +154,27 @@ klippy <- function(lang = c("r", "markdown"),
     sep = '\n'
   )
 
+  #' @param size size in pixels of the klippy button.
+  #' If `NULL`, an automatic size is used instead.
+  if (!is.null(size)){
+    assertthat::assert_that(
+      assertthat::is.scalar(size),
+      assertthat::see_if(size > 0)
+    )
+
+    tagList = htmltools::tagList(
+      htmltools::tags$style( paste0('pre{padding-', handside, ':', size, 'px}') ),
+      htmltools::tags$script(js_script))
+  } else {
+    tagList = htmltools::tags$script(js_script)
+  }
+
   #' @return An HTML tag object that can be rendered as HTML using
   #' [as.character()].
   # Attach dependencies to JS script:
+
   htmltools::attachDependencies(
-    htmltools::tags$script(js_script),
+    tagList,
     klippy_dependencies()
   )
 }

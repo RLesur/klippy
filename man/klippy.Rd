@@ -9,6 +9,7 @@ klippy(
   all_precode = FALSE,
   position = c("top", "left"),
   color = "auto",
+  size = NULL,
   tooltip_message = "Copy code",
   tooltip_success = "Copied!"
 )
@@ -34,6 +35,9 @@ specifications, i.e., either a color name (as listed by
 (see \code{\link[grDevices:rgb]{grDevices::rgb()}}), or a positive integer \code{i}
 meaning \verb{[palette][grDevices::palette]()[i]}. Default value is
 \code{"auto"}: color is set to the anchor color of the document.}
+
+\item{size}{size in pixels of the klippy button.
+If \code{NULL}, an automatic size is used instead.}
 
 \item{tooltip_message}{String with the tooltip message.}
 
